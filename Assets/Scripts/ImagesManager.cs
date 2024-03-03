@@ -37,21 +37,21 @@ public class ImagesManager : MonoBehaviour
         //if (currentImg != null)
             //currentImg.transform.SetParent(background.transform);
 
-        var img = img2; //hui
+        var img = img3;
         img.color = Color.red;
         currentImg = img;
 
-        // Получаем размеры экрана
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
 
         RectTransform rt = img.GetComponent<RectTransform>();
 
-        // Вычисляем позицию для помещения изображения в центр экрана
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         float xPosition = screenWidth / 2;
         float yPosition = screenHeight / 2;
 
-        // Устанавливаем новые координаты позиции изображения
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         rt.position = new Vector3(xPosition, yPosition, 0);
 
         img.transform.SetParent(display.transform);

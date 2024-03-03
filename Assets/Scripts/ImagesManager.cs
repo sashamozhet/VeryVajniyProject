@@ -22,44 +22,50 @@ public class ImagesManager : MonoBehaviour
     [SerializeField] Image img14;
     [SerializeField] Image img15;
     [SerializeField] Image img16;
+    [SerializeField] Image tempImage; // временное изображение для изначальной инициализации
     [SerializeField] GameObject background;
     [SerializeField] GameObject display;
-    private Image currentImg;
-    private Image prevImageState;
+
+    private Image currentImg; 
+    private Image prevImageState; // сохраняем сюда изначальные параметры изображения
+
+    private List<Image> cards;
+    private System.Random rnd;
+    private int prevIndex;
 
 
-    // Start is called before the first frame update
 
-
+    private void Start()
+    {
+        cards = new()
+        {
+            img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16
+        };
+        rnd = new();
+    }
 
     public void ImageResizer()
-    {
-        //if (currentImg != null)
-            //currentImg.transform.SetParent(background.transform);
+    {   
+        int randNumber = rnd.Next(0, cards.Count);
+        currentImg = cards[randNumber];
+        prevImageState = tempImage;
+        prevImageState.color = currentImg.color;
+        prevImageState.transform.position = currentImg.transform.position;
+        prevIndex = currentImg.transform.GetSiblingIndex();
 
-        var img = img3;
-        img.color = Color.red;
-        currentImg = img;
+        currentImg.transform.SetParent(display.transform);
+        currentImg.transform.position = new Vector2(Screen.width / 2, Screen.height / 2);
 
-        // �������� ������� ������
-        float screenWidth = Screen.width;
-        float screenHeight = Screen.height;
-
-        RectTransform rt = img.GetComponent<RectTransform>();
-
-        // ��������� ������� ��� ��������� ����������� � ����� ������
-        float xPosition = screenWidth / 2;
-        float yPosition = screenHeight / 2;
-
-        // ������������� ����� ���������� ������� �����������
-        rt.position = new Vector3(xPosition, yPosition, 0);
-
-        img.transform.SetParent(display.transform);
+        
     }
 
     public void ImageStateReturner()
     {
-
+        currentImg.color = prevImageState.color;
+        currentImg.transform.position = prevImageState.transform.position;
+        currentImg.transform.SetParent(background.transform);
+        currentImg.transform.SetSiblingIndex(prevIndex);
+        
     }
 
 }

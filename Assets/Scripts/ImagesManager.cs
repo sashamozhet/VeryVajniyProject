@@ -25,6 +25,7 @@ public class ImagesManager : MonoBehaviour
     [SerializeField] GameObject background;
     [SerializeField] GameObject display;
     private Image currentImg;
+    private Image prevImageState;
 
     // Start is called before the first frame update
 
@@ -32,8 +33,8 @@ public class ImagesManager : MonoBehaviour
 
     public void ImageResizer()
     {
-        if (currentImg != null)
-            currentImg.transform.SetParent(background.transform);
+        //if (currentImg != null)
+            //currentImg.transform.SetParent(background.transform);
 
         var img = img1;
         img.color = Color.red;
@@ -53,6 +54,11 @@ public class ImagesManager : MonoBehaviour
         rt.position = new Vector3(xPosition, yPosition, 0);
 
         img.transform.SetParent(display.transform);
+    }
+
+    public void ImageStateReturner()
+    {
+
     }
 
 }

@@ -27,6 +27,7 @@ public class ImagesManager : MonoBehaviour
     private Image currentImg;
     private Image prevImageState;
 
+
     // Start is called before the first frame update
 
 
@@ -36,7 +37,7 @@ public class ImagesManager : MonoBehaviour
         //if (currentImg != null)
             //currentImg.transform.SetParent(background.transform);
 
-        var img = img1;
+        var img = img2; //hui
         img.color = Color.red;
         currentImg = img;
 

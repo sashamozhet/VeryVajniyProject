@@ -29,43 +29,54 @@ public class ImagesManager : MonoBehaviour
     private Image currentImg; 
     private Image prevImageState; // сохраняем сюда изначальные параметры изображения
 
-    private List<Image> cards;
-    private System.Random rnd;
-    private int prevIndex;
+    private List<Image> cards; // объект под список карточек
+    private System.Random rnd; // объект под рандомайзер
+    private int prevIndex; // индекс изначального положения картинки, чтоб вернуть её на место
 
+    public bool ImageChanged {  get; private set; } // для чека, выведено ли уже какое-то изображение в центр
 
 
     private void Start()
     {
+        ImageChanged = false; // на старте никакое изображение в центр не выведено
+
+        // добавляем все карточки в список
         cards = new()
         {
             img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16
         };
+
+        // создаём объект, который будет рандомить
         rnd = new();
     }
 
     public void ImageResizer()
-    {   
-        int randNumber = rnd.Next(0, cards.Count);
-        currentImg = cards[randNumber];
-        prevImageState = tempImage;
-        prevImageState.color = currentImg.color;
-        prevImageState.transform.position = currentImg.transform.position;
-        prevIndex = currentImg.transform.GetSiblingIndex();
+    {
+        if (!ImageChanged) // меняем изображение только если оно еще НЕ изменено
+        {
+            int randNumber = rnd.Next(0, cards.Count); // рандомим число в рамках длины списка карточек
+            currentImg = cards[randNumber]; // картинка, которую меняем = порядковый номер нарандомленного в списке
+            prevImageState = tempImage; // пустая временная переменная для инициализации переменной, хранящей изначальные данные пикчи
+            prevImageState.color = currentImg.color; // сохраняем изначальный цвет выбранной пикчи
+            prevImageState.transform.position = currentImg.transform.position; // сохраняем изначальный трансформ выбранной пикчи
+            prevIndex = currentImg.transform.GetSiblingIndex(); // сохраняем изначальный индекс на канвасе, чтоб при возврате не сбивался порядок пикчей
 
-        currentImg.transform.SetParent(display.transform);
-        currentImg.transform.position = new Vector2(Screen.width / 2, Screen.height / 2);
-
-        
+            ImageChanged = true; // пикча изменена, теперь 2ую подряд мы изменить не сможем
+            currentImg.transform.SetParent(display.transform); // переносим на холст display, чтоб вывести на передний ряд
+            currentImg.transform.position = new Vector2(Screen.width / 2, Screen.height / 2); // увеличиваем размер в 2 раза
+        }
+   
     }
 
     public void ImageStateReturner()
     {
-        currentImg.color = prevImageState.color;
-        currentImg.transform.position = prevImageState.transform.position;
-        currentImg.transform.SetParent(background.transform);
-        currentImg.transform.SetSiblingIndex(prevIndex);
-        
+        if (ImageChanged)
+        {
+            ImageChanged = false;
+            currentImg.color = prevImageState.color;
+            currentImg.transform.position = prevImageState.transform.position;
+            currentImg.transform.SetParent(background.transform);
+            currentImg.transform.SetSiblingIndex(prevIndex);
+        }           
     }
-
 }

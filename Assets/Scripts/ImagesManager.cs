@@ -76,7 +76,7 @@ public class ImagesManager : MonoBehaviour
             currentImg.color = prevImageState.color; //откатывает цвет до предыдущего состояния
             currentImg.transform.position = prevImageState.transform.position; //меняем текущее положение картинки на предыдущее, т.е ставим её обратно
             currentImg.transform.SetParent(background.transform); //делаем её дочерней канвасу background
-            currentImg.transform.SetSiblingIndex(prevIndex); //Возвращает его в тоже самое место по списку, где он и был?
+            currentImg.transform.SetSiblingIndex(prevIndex); //Возвращает его в тоже самое место по списку, где он и был
         }            
     }
 }

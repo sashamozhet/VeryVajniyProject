@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +26,7 @@ public class ImagesManager : MonoBehaviour
     [SerializeField] GameObject background;
     [SerializeField] GameObject display;
 
-    private Image currentImg; 
+    private Image currentImg;  //текущее состояние картинки?
     private Image prevImageState; // сохраняем сюда изначальные параметры изображения
 
     private List<Image> cards; // объект под список карточек
@@ -70,13 +70,13 @@ public class ImagesManager : MonoBehaviour
 
     public void ImageStateReturner()
     {
-        if (ImageChanged)
+        if (ImageChanged)  //если изображение изменено
         {
-            ImageChanged = false;
-            currentImg.color = prevImageState.color;
-            currentImg.transform.position = prevImageState.transform.position;
-            currentImg.transform.SetParent(background.transform);
-            currentImg.transform.SetSiblingIndex(prevIndex);
-        }           
+            ImageChanged = false;  //значит изменить его мы не можем
+            currentImg.color = prevImageState.color; //откатывает цвет до предыдущего состояния
+            currentImg.transform.position = prevImageState.transform.position; //меняем текущее положение картинки на предыдущее, т.е ставим её обратно
+            currentImg.transform.SetParent(background.transform); //делаем её дочерней канвасу background
+            currentImg.transform.SetSiblingIndex(prevIndex); //Возвращает его в тоже самое место по списку, где он и был?
+        }            
     }
 }

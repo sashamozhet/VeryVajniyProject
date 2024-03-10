@@ -1116,10 +1116,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8624477935751421886, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2521,10 +2517,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8624477935751421886, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2979,7 +2971,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 476.25, y: 266.25}
+  m_CellSize: {x: 200, y: 240}
   m_Spacing: {x: 5, y: 5}
   m_Constraint: 1
   m_ConstraintCount: 4

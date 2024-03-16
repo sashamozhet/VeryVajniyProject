@@ -900,6 +900,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &789554685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789554687}
+  - component: {fileID: 789554686}
+  m_Layer: 0
+  m_Name: ButtonsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &789554686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789554685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea62bfc0d902c4140844035e0bd13c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startRandomingButton: {fileID: 1674238940}
+  settingsButton: {fileID: 252806055}
+--- !u!4 &789554687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789554685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &810769932 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 369642453263057494, guid: 90b36fce783f51842b97ab64188501a7, type: 3}
@@ -1480,7 +1526,6 @@ GameObject:
   - component: {fileID: 1323890924}
   - component: {fileID: 1323890919}
   - component: {fileID: 1323890923}
-  - component: {fileID: 1323890925}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1605,20 +1650,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &1323890925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323890918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea62bfc0d902c4140844035e0bd13c93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startRandomingButton: {fileID: 1674238940}
-  settingsButton: {fileID: 252806055}
 --- !u!1001 &1351238731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2142,19 +2173,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1674238941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1323890923}
-        m_TargetAssemblyTypeName: ImagesManager, Assembly-CSharp
-        m_MethodName: ImageResizer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1674238941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3066,3 +3085,4 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1323890922}
   - {fileID: 2137066845}
+  - {fileID: 789554687}

@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1323890923}
         m_TargetAssemblyTypeName: ImagesManager, Assembly-CSharp
-        m_MethodName: ImageStateReturner
+        m_MethodName: Test
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

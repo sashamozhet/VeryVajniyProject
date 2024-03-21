@@ -54,7 +54,7 @@ public class ImagesManager : MonoBehaviour
     {
         if (!ImageChanged) // меняем изображение только если оно еще НЕ изменено
         {
-            int randNumber = rnd.Next(0, cards.Count); // рандомим число в рамках длины списка карточек
+            int randNumber = rnd.Next(0, cards.Count - 1); // рандомим число в рамках длины списка карточек
             currentImg = cards[randNumber]; // картинка, которую меняем = порядковый номер нарандомленного в списке
             prevImageState = tempImage; // пустая временная переменная для инициализации переменной, хранящей изначальные данные пикчи
             prevImageState.color = currentImg.color; // сохраняем изначальный цвет выбранной пикчи
@@ -78,5 +78,13 @@ public class ImagesManager : MonoBehaviour
             currentImg.transform.SetParent(background.transform); //делаем её дочерней канвасу background
             currentImg.transform.SetSiblingIndex(prevIndex); //Возвращает его в тоже самое место по списку, где он и был
         }            
+    }
+
+    public void Test()
+    {
+        foreach(var c in cards)
+        {
+            c.transform.SetSiblingIndex(rnd.Next(0, cards.Count - 1));
+        }
     }
 }

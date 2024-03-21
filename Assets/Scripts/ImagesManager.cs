@@ -30,7 +30,7 @@ public class ImagesManager : MonoBehaviour
     private Image prevImageState; // сохраняем сюда изначальные параметры изображения
 
     private List<Image> cards; // объект под список карточек
-    private System.Random rnd; // объект под рандомайзер
+    private RandomsVariations randomizer; // объект под рандомайзер
     private int prevIndex; // индекс изначального положения картинки, чтоб вернуть её на место
 
     public bool ImageChanged {  get; private set; } // для чека, выведено ли уже какое-то изображение в центр
@@ -38,6 +38,9 @@ public class ImagesManager : MonoBehaviour
 
     private void Start()
     {
+        ButtonsManager.onStartRandomingButtonClickedAction += ImageResizer;
+        ButtonsManager.onSettingsButtonClickedAction += Test;
+
         ImageChanged = false; // на старте никакое изображение в центр не выведено
 
         // добавляем все карточки в список
@@ -47,8 +50,8 @@ public class ImagesManager : MonoBehaviour
         };
 
         // создаём объект, который будет рандомить
-        rnd = new();
-        ButtonsManager.OnImageResizeRequest += ImageResizer;
+        randomizer = new();
+        
     }
 
     public void ImageResizer()
@@ -58,7 +61,7 @@ public class ImagesManager : MonoBehaviour
             ImageStateReturner(); //откатываем назад
             
         }
-        int randNumber = rnd.Next(0, cards.Count); // рандомим число в рамках длины списка карточек
+        int randNumber = randomizer.SimpleRandomForCardIndex(0, cards.Count); // рандомим число в рамках длины списка карточек
         currentImg = cards[randNumber]; // картинка, которую меняем = порядковый номер нарандомленного в списке
         prevImageState = tempImage; // пустая временная переменная для инициализации переменной, хранящей изначальные данные пикчи
         prevImageState.color = currentImg.color; // сохраняем изначальный цвет выбранной пикчи
@@ -87,7 +90,7 @@ public class ImagesManager : MonoBehaviour
     {
         foreach(var c in cards)
         {
-            c.transform.SetSiblingIndex(rnd.Next(0, cards.Count - 1));
+            c.transform.SetSiblingIndex(randomizer.SimpleRandomForCardIndex(0, cards.Count));
         }
     }
 }

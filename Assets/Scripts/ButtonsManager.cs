@@ -8,19 +8,25 @@ public class ButtonsManager : MonoBehaviour
 {
     [SerializeField] Button startRandomingButton;
     [SerializeField] Button settingsButton;
-    //[SerializeField] List<Button> buttons;
-    public static Action OnImageResizeRequest;
+    public static Action onStartRandomingButtonClickedAction;
+    public static Action onSettingsButtonClickedAction;
+
     private void Start()
     {
-      //  startRandomingButton.onClick = null;
-        startRandomingButton.onClick.AddListener(OnStartRandomingButton);
+        startRandomingButton.onClick.AddListener(OnStartRandomingButtonClicked);
+        settingsButton.onClick.AddListener(OnSettingsButtonClicked);
 
     }
-    public void OnStartRandomingButton()
+
+    public static void OnStartRandomingButtonClicked()
     {
-        OnImageResizeRequest?.Invoke();
+        onStartRandomingButtonClickedAction?.Invoke();
     }
 
+    public static void OnSettingsButtonClicked()
+    {
+        onSettingsButtonClickedAction?.Invoke();
+    }
     /* что нужно сделать:
     
     нужен метод, который делает все кнопки на экране неактивными.

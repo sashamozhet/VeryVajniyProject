@@ -917,8 +917,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea62bfc0d902c4140844035e0bd13c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 1674238940}
+  - {fileID: 252806055}
   startRandomingButton: {fileID: 1674238940}
   settingsButton: {fileID: 252806055}
+  newButtonColor: {r: 0.8370573, g: 1, b: 0.11792451, a: 0}
 --- !u!4 &789554687
 Transform:
   m_ObjectHideFlags: 0

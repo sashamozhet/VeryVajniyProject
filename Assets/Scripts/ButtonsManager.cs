@@ -2,12 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System;
+using System.Collections.Generic;
 
 
 public class ButtonsManager : MonoBehaviour
 {
+    [SerializeField] private Button[] buttons;
     [SerializeField] Button startRandomingButton;
     [SerializeField] Button settingsButton;
+    [SerializeField] private Color newButtonColor;
     public static Action onStartRandomingButtonClickedAction;
     public static Action onSettingsButtonClickedAction;
 
@@ -15,6 +18,7 @@ public class ButtonsManager : MonoBehaviour
     {
         startRandomingButton.onClick.AddListener(OnStartRandomingButtonClicked);
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
+
 
     }
 
@@ -26,6 +30,27 @@ public class ButtonsManager : MonoBehaviour
     public static void OnSettingsButtonClicked()
     {
         onSettingsButtonClickedAction?.Invoke();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            DisableButtons();
+        }
+    }
+
+    public void DisableButtons()
+    {
+        foreach (Button button in buttons)
+        {
+           // button.interactable = false; // Делаем кнопку неактивной
+            Image buttonImage = button.GetComponent<Image>(); //Это нужно, потомучто если у кнопки
+                                                              //нет этого компонента, то этот метод закрашит программу
+            if (buttonImage != null)
+            {
+                buttonImage.color = newButtonColor; // Изменяем цвет кнопки
+            }
+        }
     }
     /* что нужно сделать:
     

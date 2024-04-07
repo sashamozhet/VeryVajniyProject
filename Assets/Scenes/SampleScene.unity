@@ -1758,6 +1758,10 @@ MonoBehaviour:
   tempImage: {fileID: 672996995}
   background: {fileID: 2065454870}
   display: {fileID: 692323046}
+  movesMin: 25
+  movesMax: 34
+  defaultInterval: 0
+  intervalChangeWithEveryIteration: 0.015
 --- !u!114 &1323890924
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,6 +21,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudioWhenRandomStarted()
     {
-        audioSource.PlayOneShot(randomStartedClip);
+        //audioSource.PlayOneShot(randomStartedClip);
     }
 }

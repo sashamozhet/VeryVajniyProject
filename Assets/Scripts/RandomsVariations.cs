@@ -11,7 +11,7 @@ public class RandomsVariations
     {
 
     }
-    public int SimpleRandomForCardIndex(int min, int max)
+    public int SimpleRandomMinMax(int min, int max)
     {
         return Random.Range(min, max);
     }

@@ -31,6 +31,7 @@ public class ImagesManager : MonoBehaviour
     [SerializeField] int movesMax;
     [SerializeField] float defaultInterval;
     [SerializeField] float intervalChangeWithEveryIteration;
+    [SerializeField] ButtonsManager buttonsManager;  
 
     private Image currentImg;  //текущее состояние картинки?
     private Image prevImageState; // сохраняем сюда изначальные параметры изображения
@@ -48,8 +49,7 @@ public class ImagesManager : MonoBehaviour
 
     private void Start()
     {
-        ButtonsManager.onStartRandomingButtonClickedAction += StartChosingImageProcess;
-        //ButtonsManager.onSettingsButtonClickedAction += MakeRandomMinMaxAmountOfMoves;
+        //SuperManager.GameStarted += ShuffleCardsOnBoard;
 
         ImageChanged = false; // на старте никакое изображение в центр не выведено
 
@@ -66,8 +66,9 @@ public class ImagesManager : MonoBehaviour
 
     public void ShuffleCardsOnBoard()
     {
-        foreach(Image img in cards)
-        {
+        foreach (Image img in cards)
+        {           
+            img.transform.DOScale(1.03f, 0.4f).SetLoops(4, LoopType.Yoyo);
             img.transform.SetSiblingIndex(randomizer.SimpleRandomMinMax(0, cards.Count)); // присваиваем рандомное число каждой карточке как порядковый номер на канвасе
         }
     }
@@ -100,22 +101,22 @@ public class ImagesManager : MonoBehaviour
             interval += intervalChangeWithEveryIteration; // увеличиваем задержку между картами с каждым ходом, чтоб замедлить движение
         }
         currentImg = cardsOnBoard[j]; // карта, на которой остановился цикл, и является картой, которую нужно изменить
-        mySequence.AppendCallback(ImageResizer); // по завершению действий выше вызываем метод, показывающий итоговую карту
+        mySequence.Append(ImageResizer()); // по завершению действий выше вызываем метод, показывающий итоговую карту
+        mySequence.AppendCallback(() => { buttonsManager.EnableOrDisableButtons(true); }); // по завершению анимации показа карты включаем кнопки
     }
 
-    public void ImageResizer()
+    public Sequence ImageResizer()
     {   
         prevImageState = tempImage; // пустая временная переменная для инициализации переменной, хранящей изначальные данные пикчи
         prevImageState.color = currentImg.color; // сохраняем изначальный цвет выбранной пикчи
         prevImageState.transform.localScale = currentImg.transform.localScale; // сохраняем изначальный размер выбранной пикчи
         prevImageState.transform.position = currentImg.transform.position; // сохраняем изначальный размер выбранной пикчи
         prevIndex = currentImg.transform.GetSiblingIndex(); // сохраняем изначальный индекс на канвасе, чтоб при возврате не сбивался порядок пикчей
-
+        Sequence seq = DOTween.Sequence();
         ImageChanged = true; // пикча изменена, теперь 2ую подряд мы изменить не сможем
-        currentImg.transform.SetParent(display.transform); // переносим на холст display, чтоб вывести на передний ряд
-        currentImg.transform.position = new Vector2(Screen.width / 2, Screen.height / 2); // выносим в центр экрана
-        currentImg.transform.DOScale(1.8f, 2f);
-        
+        seq.AppendCallback(() => { currentImg.transform.SetParent(display.transform); }); // переносим на холст display, чтоб вывести на передний ряд
+        seq.AppendCallback(() => { currentImg.transform.position = new Vector2(Screen.width / 2, Screen.height / 2); }); // выносим в центр экрана
+        return seq.Append(currentImg.transform.DOScale(1.7f, 3f));        
     }
 
     public void ImageStateReturner()

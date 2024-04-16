@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {        
-        ButtonsManager.onStartRandomingButtonClickedAction += PlayAudioWhenRandomStarted;
+        //ButtonsManager.onStartRandomingButtonClickedAction += PlayAudioWhenRandomStarted;
     }
 
     // Update is called once per frame

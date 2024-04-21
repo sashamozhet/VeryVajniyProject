@@ -7,28 +7,18 @@ using System.Collections.Generic;
 
 public class ButtonsManager : MonoBehaviour
 {
-    [SerializeField] private Button[] buttons;
+    [SerializeField] internal Button[] buttons;
     [SerializeField] internal Button startRandomingButton;
-    [SerializeField] Button settingsButton;
+    [SerializeField] internal Button settingsButton;
     [SerializeField] private Color newButtonColor;
-    public Action onStartRandomingButtonClickedAction;
-    public Action onSettingsButtonClickedAction;
+
 
     private void Start()
     {
-        //startRandomingButton.onClick.AddListener(OnStartRandomingButtonClicked);
-        settingsButton.onClick.AddListener(OnSettingsButtonClicked);
     }
 
-    public void OnStartRandomingButtonClicked()
-    {
-        //SuperManager.GameStarted?.Invoke();
-    }
 
-    public void OnSettingsButtonClicked()
-    {
-        onSettingsButtonClickedAction?.Invoke();
-    }
+
 
     public void EnableOrDisableButtons(bool isEnable)
     {
@@ -42,6 +32,11 @@ public class ButtonsManager : MonoBehaviour
                 buttonImage.color = isEnable? Color.white : Color.red; // Изменяем цвет кнопки, если отключаем кнопки = новый цвет, если возвращаем = дефолтный
             }
         }
+    }
+
+    public Sequence EnableOrDisableButtonsSequence(bool isEnable)
+    {
+        return DOTween.Sequence().AppendCallback(() => { EnableOrDisableButtons(isEnable); });
     }
 
 }

@@ -5,12 +5,13 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip randomStartedClip;
+    [SerializeField] AudioClip gameStartedClip;
+    [SerializeField] AudioClip cardChosenClip;
 
     // Start is called before the first frame update
     void Start()
     {        
-        //ButtonsManager.onStartRandomingButtonClickedAction += PlayAudioWhenRandomStarted;
+
     }
 
     // Update is called once per frame
@@ -19,8 +20,13 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void PlayAudioWhenRandomStarted()
+    public void PlayAudioWhenGameStarted()
     {
-        //audioSource.PlayOneShot(randomStartedClip);
+        audioSource.PlayOneShot(gameStartedClip);
+    }
+
+    public void PlayAudioWhenCardChosen()
+    {
+        audioSource.PlayOneShot(cardChosenClip);
     }
 }

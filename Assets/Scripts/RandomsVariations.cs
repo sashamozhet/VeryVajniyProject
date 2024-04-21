@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomsVariations
@@ -11,7 +9,7 @@ public class RandomsVariations
     {
 
     }
-    public int SimpleRandomMinMax(int min, int max)
+    public static int SimpleRandomMinMax(int min, int max)
     {
         return Random.Range(min, max);
     }

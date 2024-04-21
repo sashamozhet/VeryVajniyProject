@@ -18,8 +18,8 @@ public class SuperManager : MonoBehaviour
 
     private void Start()
     {   
-        GameStarted += GameProcessStarted; // ÔÓ‰ÔËÒ˚‚‡ÂÏ ÏÂÚÓ‰ Ì‡˜‡Î‡ Ë„˚ Ì‡ ÒÓ·˚ÚËÂ
-        //buttonsManager.startRandomingButton.onClick.AddListener(StartGameProcess); // ‰Ó·‡‚ÎˇÂÏ ÙÛÌÍˆËÓÌ‡Î ÍÌÓÔÍÂ Ì‡˜‡Î‡ Ë„˚
+        GameStarted += GameProcessStarted; // –ø–æ–¥–ø–∏—Å—ã–≤–∞–µ–º –º–µ—Ç–æ–¥ –Ω–∞—á–∞–ª–∞ –∏–≥—Ä—ã –Ω–∞ —Å–æ–±—ã—Ç–∏–µ
+        //buttonsManager.startRandomingButton.onClick.AddListener(StartGameProcess); // –¥–æ–±–∞–≤–ª—è–µ–º —Ñ—É–Ω–∫—Ü–∏–æ–Ω–∞–ª –∫–Ω–æ–ø–∫–µ –Ω–∞—á–∞–ª–∞ –∏–≥—Ä—ã
     }
 
     public void StartGameProcess()
@@ -29,31 +29,31 @@ public class SuperManager : MonoBehaviour
 
     public void GameProcessStarted()
     {   
-        buttonsManager.EnableOrDisableButtons(false); // ÓÚÍÎ˛˜‡ÂÏ ÍÌÓÔÍË
-        var mySequence = DOTween.Sequence(); // ÒÓÁ‰‡∏Ï Ó˜ÂÂ‰¸ ‚˚ÔÓÎÌÂÌËˇ Ú‚ËÌÓ‚
+        buttonsManager.EnableOrDisableButtons(false); // –æ—Ç–∫–ª—é—á–∞–µ–º –∫–Ω–æ–ø–∫–∏
+        var mySequence = DOTween.Sequence(); // —Å–æ–∑–¥–∞—ë–º –æ—á–µ—Ä–µ–¥—å –≤—ã–ø–æ–ª–Ω–µ–Ω–∏—è —Ç–≤–∏–Ω–æ–≤
 
         if (imagesManager.CardAnimatedMovedToDisplay)
         {
-            mySequence.AppendCallback(() => { imagesManager.background.SetActive(false); }); // ‚˚ÍÎ˛˜‡ÂÏ Ì‡ÒÚÓˇ˘ËÈ ·ÂÍ„‡ÛÌ‰
-            mySequence.Append(imagesManager.backgroundAlwaysSorted.transform.DOScale(0, 0.000001f)); // ÒÍÂÈÎËÏ ‚ 0 ÌÂ‡ÍÚË‚Ì˚È ÙÂÈÍÓ‚˚È ·ÂÍ„‡ÛÌ‰
-            mySequence.AppendCallback(() => { imagesManager.backgroundAlwaysSorted.SetActive(true); }); // ‚ÍÎ˛˜‡ÂÏ ÙÂÈÍÓ‚˚È ·ÂÍ„‡ÛÌ‰
-            mySequence.Append(imagesManager.backgroundAlwaysSorted.transform.DOScale(1, timeManager.durationSortedBgScaleTime)).AppendInterval(timeManager.intervalAfterSortedBgScaled); // ÒÍÂÈÎËÏ ÙÂÈÍÓ‚˚È ·ÂÍ„‡ÛÌ‰ ‚ 1, ÔÓÍ‡Á˚‚‡ˇ Â„Ó ˛ÁÂÛ
-            mySequence.Append(imagesManager.BoardStateReturner()); // ‚ÓÁ‚‡˘‡ÂÏ ÒÓÒÚÓˇÌËÂ Ì‡ÒÚÓˇ˘Â„Ó ·ÂÈÍ„‡ÛÌ‰‡                      
-            mySequence.AppendCallback(() => { imagesManager.background.SetActive(true); }); // ‚ÍÎ˛˜‡ÂÏ Ì‡ÒÚÓˇ˘ËÈ ·ÂÍ„‡ÛÌ‰
-            mySequence.AppendCallback(() => { imagesManager.backgroundAlwaysSorted.SetActive(false); }); // ‚˚ÍÎ˛˜‡ÂÏ ÙÂÈÍÓ‚˚È ·ÂÍ„‡ÛÌ‰
+            mySequence.AppendCallback(() => { imagesManager.background.SetActive(false); }); // –≤—ã–∫–ª—é—á–∞–µ–º –Ω–∞—Å—Ç–æ—è—â–∏–π –±–µ–∫–≥—Ä–∞—É–Ω–¥
+            mySequence.Append(imagesManager.backgroundAlwaysSorted.transform.DOScale(0, 0.000001f)); // —Å–∫–µ–π–ª–∏–º –≤ 0 –Ω–µ–∞–∫—Ç–∏–≤–Ω—ã–π —Ñ–µ–π–∫–æ–≤—ã–π –±–µ–∫–≥—Ä–∞—É–Ω–¥
+            mySequence.AppendCallback(() => { imagesManager.backgroundAlwaysSorted.SetActive(true); }); // –≤–∫–ª—é—á–∞–µ–º —Ñ–µ–π–∫–æ–≤—ã–π –±–µ–∫–≥—Ä–∞—É–Ω–¥
+            mySequence.Append(imagesManager.backgroundAlwaysSorted.transform.DOScale(1, timeManager.durationSortedBgScaleTime)).AppendInterval(timeManager.intervalAfterSortedBgScaled); // —Å–∫–µ–π–ª–∏–º —Ñ–µ–π–∫–æ–≤—ã–π –±–µ–∫–≥—Ä–∞—É–Ω–¥ –≤ 1, –ø–æ–∫–∞–∑—ã–≤–∞—è –µ–≥–æ —é–∑–µ—Ä—É
+            mySequence.Append(imagesManager.BoardStateReturner()); // –≤–æ–∑–≤—Ä–∞—â–∞–µ–º —Å–æ—Å—Ç–æ—è–Ω–∏–µ –Ω–∞—Å—Ç–æ—è—â–µ–≥–æ –±–µ–π–∫–≥—Ä–∞—É–Ω–¥–∞                      
+            mySequence.AppendCallback(() => { imagesManager.background.SetActive(true); }); // –≤–∫–ª—é—á–∞–µ–º –Ω–∞—Å—Ç–æ—è—â–∏–π –±–µ–∫–≥—Ä–∞—É–Ω–¥
+            mySequence.AppendCallback(() => { imagesManager.backgroundAlwaysSorted.SetActive(false); }); // –≤—ã–∫–ª—é—á–∞–µ–º —Ñ–µ–π–∫–æ–≤—ã–π –±–µ–∫–≥—Ä–∞—É–Ω–¥
         }
         
-        mySequence.Append(imagesManager.ShuffleCardsSequence()); // ‰Ó·‡‚ÎˇÂÏ ‚ Ó˜ÂÂ‰¸ ÔÂÂÏÂ¯Ë‚‡ÌËÂ Í‡ÚÓ˜ÂÍ
-        mySequence.Append(imagesManager.background.transform.DOScale(1.03f, timeManager.durationBgPreGameTickAnimation).SetLoops(4, LoopType.Yoyo)); // ÒÍÂÈÎËÏ ·˝Í„‡ÛÌ‰ ÚÛ‰‡-Ò˛‰‡
-        mySequence.AppendCallback(() => { audioManager.PlayAudioWhenGameStarted(); });  // ‚ÓÒÔÓËÁ‚Ó‰ËÏ Á‚ÛÍ ÚËÔ‡ ÔÓÂı‡ÎË                                                        
-        mySequence.AppendInterval(timeManager.intervalAfterCardsShuffle); // ‰Ó·‡‚ÎˇÂÏ Á‡‰ÂÊÍÛ ÔÂÂ‰ ÒÎÂ‰Û˛˘ËÏ ¯‡„ÓÏ
-        mySequence.Append(imagesManager.MakeMovesOnBoard(timeManager.intervalPreEveryMove, timeManager.intervalChangeWithEveryIteration, RandomsVariations.SimpleRandomMinMax(movesMin, movesMax))); // ‰Ó·‡‚ÎˇÂÏ ‚ Ó˜ÂÂ‰¸ ÏÂÚÓ‰, ÔÓ·Â„‡˛˘ËÈÒˇ ÔÓ Í‡ÚÓ˜Í‡Ï ‚ ÒÔËÒÍÂ
+        mySequence.Append(imagesManager.ShuffleCardsSequence()); // –¥–æ–±–∞–≤–ª—è–µ–º –≤ –æ—á–µ—Ä–µ–¥—å –ø–µ—Ä–µ–º–µ—à–∏–≤–∞–Ω–∏–µ –∫–∞—Ä—Ç–æ—á–µ–∫
+        mySequence.Append(imagesManager.background.transform.DOScale(1.03f, timeManager.durationBgPreGameTickAnimation).SetLoops(4, LoopType.Yoyo)); // —Å–∫–µ–π–ª–∏–º –±—ç–∫–≥—Ä–∞—É–Ω–¥ —Ç—É–¥–∞-—Å—é–¥–∞
+        mySequence.AppendCallback(() => { audioManager.PlayAudioWhenGameStarted(); });  // –≤–æ—Å–ø—Ä–æ–∏–∑–≤–æ–¥–∏–º –∑–≤—É–∫ —Ç–∏–ø–∞ –ø–æ–µ—Ö–∞–ª–∏                                                        
+        mySequence.AppendInterval(timeManager.intervalAfterCardsShuffle); // –¥–æ–±–∞–≤–ª—è–µ–º –∑–∞–¥–µ—Ä–∂–∫—É –ø–µ—Ä–µ–¥ —Å–ª–µ–¥—É—é—â–∏–º —à–∞–≥–æ–º
+        mySequence.Append(imagesManager.MakeMovesOnBoard(timeManager.intervalPreEveryMove, timeManager.intervalChangeWithEveryIteration, RandomsVariations.SimpleRandomMinMax(movesMin, movesMax))); // –¥–æ–±–∞–≤–ª—è–µ–º –≤ –æ—á–µ—Ä–µ–¥—å –º–µ—Ç–æ–¥, –ø—Ä–æ–±–µ–≥–∞—é—â–∏–π—Å—è –ø–æ –∫–∞—Ä—Ç–æ—á–∫–∞–º –≤ —Å–ø–∏—Å–∫–µ
        
-        mySequence.Append(imagesManager.background.transform.DOScale(0, timeManager.durationBgScaleToZeroWhenCardChosen)); // ÒÍÂÈÎËÏ ·˝Í„‡ÛÌ‰ ‚ 0, ÔÂÊ‰Â, ˜ÂÏ ‚˚‰‡Ú¸ ËÚÓ„Ó‚Û˛ Í‡ÚÓ˜ÍÛ ‚ ˆÂÌÚ ÒÔËÒÍ‡
-        mySequence.AppendInterval(timeManager.intervalPreChosenCardShown); // ‰Ó·‡‚ÎˇÂÏ Á‡‰ÂÊÍÛ ÔÂÂ‰ ÒÎÂ‰Û˛˘ËÏ ¯‡„ÓÏ
-        mySequence.AppendCallback(() => { audioManager.PlayAudioWhenCardChosen(); }); // ‚ÓÒÔÓËÁ‚Ó‰ËÏ Á‚ÛÍ ÚËÔ‡ ·‡ı Í‡Ú‡ ‚˚·‡Ì‡
-        mySequence.Append(imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation)); // ‚˚‚Ó‰ËÏ Í‡ÚÓ˜ÍÛ ‚ ˆÂÌÚ ˝Í‡Ì‡
-        mySequence.Append(buttonsManager.EnableOrDisableButtonsSequence(true)); // ‚ÍÎ˛˜‡ÂÏ ÍÌÓÔÍË
+        mySequence.Append(imagesManager.background.transform.DOScale(0, timeManager.durationBgScaleToZeroWhenCardChosen)); // —Å–∫–µ–π–ª–∏–º –±—ç–∫–≥—Ä–∞—É–Ω–¥ –≤ 0, –ø—Ä–µ–∂–¥–µ, —á–µ–º –≤—ã–¥–∞—Ç—å –∏—Ç–æ–≥–æ–≤—É—é –∫–∞—Ä—Ç–æ—á–∫—É –≤ —Ü–µ–Ω—Ç—Ä —Å–ø–∏—Å–∫–∞
+        mySequence.AppendInterval(timeManager.intervalPreChosenCardShown); // –¥–æ–±–∞–≤–ª—è–µ–º –∑–∞–¥–µ—Ä–∂–∫—É –ø–µ—Ä–µ–¥ —Å–ª–µ–¥—É—é—â–∏–º —à–∞–≥–æ–º
+        mySequence.AppendCallback(() => { audioManager.PlayAudioWhenCardChosen(); }); // –≤–æ—Å–ø—Ä–æ–∏–∑–≤–æ–¥–∏–º –∑–≤—É–∫ —Ç–∏–ø–∞ –±–∞—Ö –∫–∞—Ä—Ç–∞ –≤—ã–±—Ä–∞–Ω–∞
+        mySequence.Append(imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation)); // –≤—ã–≤–æ–¥–∏–º –∫–∞—Ä—Ç–æ—á–∫—É –≤ —Ü–µ–Ω—Ç—Ä —ç–∫—Ä–∞–Ω–∞
+        mySequence.Append(buttonsManager.EnableOrDisableButtonsSequence(true)); // –≤–∫–ª—é—á–∞–µ–º –∫–Ω–æ–ø–∫–∏
     }
 }
 

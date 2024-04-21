@@ -19,7 +19,7 @@ public class SuperManager : MonoBehaviour
     private void Start()
     {   
         GameStarted += GameProcessStarted; // подписываем метод начала игры на событие
-        buttonsManager.startRandomingButton.onClick.AddListener(StartGameProcess); // добавляем функционал кнопке начала игры
+        //buttonsManager.startRandomingButton.onClick.AddListener(StartGameProcess); // добавляем функционал кнопке начала игры
     }
 
     public void StartGameProcess()

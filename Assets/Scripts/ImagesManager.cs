@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-
 public class ImagesManager : MonoBehaviour
 {
     [SerializeField] Image img1;
@@ -24,6 +23,7 @@ public class ImagesManager : MonoBehaviour
     [SerializeField] Image img16;
     [SerializeField] Image tempImage; // временное изображение для изначальной инициализации
     [SerializeField] internal GameObject background; // холст, на котором пикчи лежат изначально
+    [SerializeField] internal GameObject backgroundAlwaysSorted; // ФЕЙК ХОЛСТ
     [SerializeField] internal GameObject tempBackgroundObject; // объект для сохранения изначального вида бэкграунд-холста
     [SerializeField] GameObject display; // холст, на который выводится финально выбранная пикча
 
@@ -55,23 +55,8 @@ public class ImagesManager : MonoBehaviour
         {
             img.transform.SetSiblingIndex(RandomsVariations.SimpleRandomMinMax(0, cards.Count - 1)); // присваиваем рандомное число каждой карточке как порядковый номер на канвасе       
         }
-        return seq.Append(background.transform.DOScale(1.03f, 0.4f).SetLoops(4, LoopType.Yoyo));
+        return seq;
     }
-
-    public Sequence SortCardsSequence()
-    {
-        return DOTween.Sequence().AppendCallback(() => { SortCards(); }).AppendInterval(3f);
-    }
-
-    public void SortCards()
-    {
-        // каждую карту добавляем на background в изначальном порядке
-        for (int i = 0; i < cards.Count; i++)
-        {
-            cards[i].transform.SetSiblingIndex(i);
-        }
-    }
-
 
     public Sequence MakeMovesOnBoard(float defaultInterval, float intervalChange, int randNum)
     {
@@ -86,7 +71,8 @@ public class ImagesManager : MonoBehaviour
         int j = 0; // переменная для прохода по индексу карточек
         for (int i = 0; i < randNum; i++)
         {
-            mySequence.Append(cardsOnBoard[j].transform.DOPunchScale(new Vector2(0.1f, 0.1f), interval * 1.05f, 0, 0.05f)); // каждую карту увеличиваем немного и возвращаем в исходное
+            //mySequence.Append(cardsOnBoard[j].transform.DOPunchScale(new Vector2(0.1f, 0.1f), interval * 1.05f, 0, 0.05f)); // каждую карту увеличиваем немного и возвращаем в исходное
+            mySequence.Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, -10), interval * 1.05f)).AppendInterval(interval).Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, 0), interval * 1.05f)); // каждую карту увеличиваем немного и возвращаем в исходное
             mySequence.AppendInterval(interval); // после каждой анимации задержка перед анимацией следующей карты
             j = j < cardsOnBoard.Length - 1 ? j + 1 : 0; // если индекс карты в списке меньше максимально возможного, добавляем 1. если дошли до конца списка, а ходы еще есть, идём заново
             interval += intervalChange; // увеличиваем задержку между картами с каждым ходом, чтоб замедлить движение
@@ -95,7 +81,7 @@ public class ImagesManager : MonoBehaviour
         return mySequence;
     }
 
-    public Sequence AnimateChosenCard()
+    public Sequence AnimateChosenCard(float scaleDuration)
     {   
         prevImageState = tempImage; // пустая временная переменная для инициализации переменной, хранящей изначальные данные пикчи
         prevImageState.color = currentImg.color; // сохраняем изначальный цвет выбранной пикчи
@@ -105,14 +91,9 @@ public class ImagesManager : MonoBehaviour
         CardAnimatedMovedToDisplay = true; // пикча изменена, теперь 2ую подряд мы изменить не сможем
         seq.AppendCallback(() => { currentImg.transform.SetParent(display.transform); }); // переносим на холст display, чтоб вывести на передний ряд
         seq.AppendCallback(() => { currentImg.transform.position = new Vector2(Screen.width / 2, Screen.height / 2); }); // выносим в центр экрана
-        return seq.Append(currentImg.transform.DOScale(1.5f, 2f));        
+        return seq.Append(currentImg.transform.DOScale(1.5f, scaleDuration));        
     }
 
-
-    public Sequence GameObjectScalerSequence(GameObject obj, float size, float duration)
-    {
-        return DOTween.Sequence().Append(obj.transform.DOScale(size, duration));
-    }
     public Sequence BoardStateReturner()
     {
         Sequence seq = DOTween.Sequence(); // создаём очередь
@@ -122,10 +103,7 @@ public class ImagesManager : MonoBehaviour
         currentImg.transform.localScale = prevImageState.transform.localScale; //меняем текущий размер картинки на предыдущий   
         background.transform.localScale = tempBackgroundObject.transform.localScale; // возвращаем размер бэкграунда
         background.transform.localPosition = tempBackgroundObject.transform.localPosition; // возвращаем позицию бэкграунда
-
-        //seq.AppendCallback(() => { SortCards(); }); //если вызвать тут, шаффл в 40 строчке суперманагера не сработает
-
         CardAnimatedMovedToDisplay = false;  // изображение снова на месте, булевую откатываем в изначальное состояние
-        return seq.AppendInterval(0.5f);
+        return seq;
     }
 }

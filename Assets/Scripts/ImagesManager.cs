@@ -27,7 +27,7 @@ public class ImagesManager : MonoBehaviour
     [SerializeField] internal GameObject tempBackgroundObject; // объект для сохранения изначального вида бэкграунд-холста
     [SerializeField] GameObject display; // холст, на который выводится финально выбранная пикча
 
-    private Image currentImg;  //текущее состояние картинки?
+    internal Image currentImg;  //текущее состояние картинки?
     private Image prevImageState; // сохраняем сюда изначальные параметры изображения
     internal List<Image> cards; // объект под список карточек
     public bool CardAnimatedMovedToDisplay {  get; private set; } // для чека, выбрана и анимирована ли уже какая-то карта на момент
@@ -69,9 +69,9 @@ public class ImagesManager : MonoBehaviour
         var cardsOnBoard = background.GetComponentsInChildren<Image>(); // добавляем в новый список перемешанные карты в новом порядке
 
         int j = 0; // переменная для прохода по индексу карточек
-        for (int i = 0; i < randNum; i++)
+        for (int i = 0; i <= randNum; i++)
         {
-            //mySequence.Append(cardsOnBoard[j].transform.DOPunchScale(new Vector2(0.1f, 0.1f), interval * 1.05f, 0, 0.05f)); // каждую карту увеличиваем немного и возвращаем в исходное
+            //mySequence.Append(cardsOnBoard[j].transform.DOPunchScale(new Vector2(0.1f, 0.1f), interval * 1.05f, 0, 0.05f)); // каждую карту увеличиваем немного и возвращаем в исходное, это старый вариант, сейчас работаем не с ним
             mySequence.Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, -10), interval * 1.05f)).AppendInterval(interval).Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, 0), interval * 1.05f)); // каждую карту увеличиваем немного и возвращаем в исходное
             mySequence.AppendInterval(interval); // после каждой анимации задержка перед анимацией следующей карты
             j = j < cardsOnBoard.Length - 1 ? j + 1 : 0; // если индекс карты в списке меньше максимально возможного, добавляем 1. если дошли до конца списка, а ходы еще есть, идём заново
@@ -94,6 +94,12 @@ public class ImagesManager : MonoBehaviour
         return seq.Append(currentImg.transform.DOScale(1.5f, scaleDuration));        
     }
 
+    public Sequence PreAnimateChosenCard(Image image, float ticksDuration)
+    {
+        Sequence seq = DOTween.Sequence(); // создаём очередь выполнения
+        seq.Append(image.transform.DOScale(1.02f, ticksDuration)).Append(image.transform.DOScale(0.98f, ticksDuration)).SetLoops(6);
+        return seq;
+    }
     public Sequence BoardStateReturner()
     {
         Sequence seq = DOTween.Sequence(); // создаём очередь

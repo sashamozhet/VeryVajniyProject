@@ -48,7 +48,7 @@ public class SuperManager : MonoBehaviour
         mySequence.AppendCallback(() => { audioManager.PlayAudioWhenGameStarted(); });  // воспроизводим звук типа поехали                                                        
         mySequence.AppendInterval(timeManager.intervalAfterCardsShuffle); // добавляем задержку перед следующим шагом
         mySequence.Append(imagesManager.MakeMovesOnBoard(timeManager.intervalPreEveryMove, timeManager.intervalChangeWithEveryIteration, RandomsVariations.SimpleRandomMinMax(movesMin, movesMax))); // добавляем в очередь метод, пробегающийся по карточкам в списке
-       
+        mySequence.Append(imagesManager.PreAnimateChosenCard(imagesManager.currentImg, timeManager.durationPreAnimateChosenCardTick)); // преанимация выбранной карты, скейлы туда-сюда
         mySequence.Append(imagesManager.background.transform.DOScale(0, timeManager.durationBgScaleToZeroWhenCardChosen)); // скейлим бэкграунд в 0, прежде, чем выдать итоговую карточку в центр списка
         mySequence.AppendInterval(timeManager.intervalPreChosenCardShown); // добавляем задержку перед следующим шагом
         mySequence.AppendCallback(() => { audioManager.PlayAudioWhenCardChosen(); }); // воспроизводим звук типа бах карта выбрана

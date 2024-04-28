@@ -366,6 +366,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065454871}
     m_Modifications:
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_text
+      value: 'Blink dagger
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_fontSize
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 3392867619311147643, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -446,6 +456,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8011487891336447369, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_text
+      value: 'Force staff
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 8624477935751421886, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
       propertyPath: m_Name
       value: Common 2
@@ -455,7 +471,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5210724374560497650, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
@@ -1561,6 +1578,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065454871}
     m_Modifications:
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_text
+      value: Phase boots
+      objectReference: {fileID: 0}
     - target: {fileID: 3392867619311147643, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1771,6 +1792,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065454871}
     m_Modifications:
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_text
+      value: Power treads
+      objectReference: {fileID: 0}
     - target: {fileID: 3392867619311147643, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2214,6 +2239,7 @@ MonoBehaviour:
   intervalAfterSortedBgScaled: 0.5
   durationBgPreGameTickAnimation: 0.4
   intervalAfterCardsShuffle: 0.5
+  durationPreAnimateChosenCardTick: 0.1
   intervalPreChosenCardShown: 0.5
   durationBgScaleToZeroWhenCardChosen: 1
   durationChosenCardScaleAnimation: 2
@@ -3100,6 +3126,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5239415527602452964, guid: d8264c7c72f104f488abf1579bd95339, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60.0468
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239415527602452964, guid: d8264c7c72f104f488abf1579bd95339, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.0234
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3129,6 +3163,28 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065454871}
     m_Modifications:
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_text
+      value: 'Guardian greaves
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_fontSize
+      value: 45.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3392867619311147643, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3242,6 +3298,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065454871}
     m_Modifications:
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_text
+      value: 'Glimmer cape
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3392867619311147643, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4133,6 +4195,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065454871}
     m_Modifications:
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_text
+      value: Force staff
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_fontSize
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 3392867619311147643, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4251,6 +4321,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065454871}
     m_Modifications:
+    - target: {fileID: 2906024572676563989, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
+      propertyPath: m_text
+      value: Hand of midas
+      objectReference: {fileID: 0}
     - target: {fileID: 3392867619311147643, guid: 625d1f4ce7c0bd745b075809bcf922b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

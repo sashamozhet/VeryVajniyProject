@@ -27,6 +27,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudioWhenCardChosen()
     {
-        audioSource.PlayOneShot(cardChosenClip);
+        audioSource.PlayOneShot(cardChosenClip, volumeScale: 0.6f);
     }
 }

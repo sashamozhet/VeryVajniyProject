@@ -53,7 +53,8 @@ public class SuperManager : MonoBehaviour
         mySequence.AppendInterval(timeManager.intervalPreChosenCardShown); // добавляем задержку перед следующим шагом
         mySequence.AppendCallback(() => { audioManager.PlayAudioWhenCardChosen(); }); // воспроизводим звук типа бах карта выбрана
         mySequence.Append(imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation)); // выводим карточку в центр экрана
-        mySequence.Append(buttonsManager.EnableOrDisableButtonsSequence(true)); // включаем кнопки
+        mySequence.Append(buttonsManager.ChangeObjectTextSequence(buttonsManager.startRandomingButtonObject, "pick another")); // меняем текст главной кнопки
+        mySequence.AppendInterval(timeManager.intervalPreButtonsTurnOn).Append(buttonsManager.EnableOrDisableButtonsSequence(true)); // включаем кнопки после небольшой задержки
     }
 }
 

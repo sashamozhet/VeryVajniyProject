@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class ButtonsManager : MonoBehaviour
 {   
@@ -25,8 +26,16 @@ public class ButtonsManager : MonoBehaviour
         settingsButton = settingsButtonObject.GetComponent<Button>();
     }
 
+    public void ChangeObjectText(GameObject obj, string newText)
+    {
+        var txt = obj.GetComponentInChildren<TextMeshProUGUI>();
+        txt.text = newText;
+    }
 
-
+    public Sequence ChangeObjectTextSequence(GameObject obj, string newText)
+    {
+        return DOTween.Sequence().AppendCallback(() => { ChangeObjectText(obj, newText); });
+    }
 
     public void EnableOrDisableButtons(bool isEnable)
     {

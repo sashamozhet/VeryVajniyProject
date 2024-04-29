@@ -12,4 +12,5 @@ public class TimeManager: MonoBehaviour
     [SerializeField] internal float intervalPreChosenCardShown = 0.5f; // задержка перед показом итоговой карты
     [SerializeField] internal float durationBgScaleToZeroWhenCardChosen = 1f; // время скейла в 0 бэкграунд-холста, когда итоговая карта выбрана
     [SerializeField] internal float durationChosenCardScaleAnimation = 2f; // время показа анимации скейла выбранной итоговой карты
+    [SerializeField] internal float intervalPreButtonsTurnOn = 0.5f; // задержка перед включением кнопок после показа итоговой карты
 }

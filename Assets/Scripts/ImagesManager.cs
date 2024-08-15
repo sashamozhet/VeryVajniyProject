@@ -23,7 +23,7 @@ public class ImagesManager : MonoBehaviour
     [SerializeField] Image img16;
     [SerializeField] Image tempImage; // временное изображение для изначальной инициализации
     [SerializeField] internal GameObject background; // холст, на котором пикчи лежат изначально
-    [SerializeField] internal GameObject backgroundAlwaysSorted; // ФЕЙК ХОЛСТ
+    internal GameObject backgroundAlwaysSorted; // ФЕЙК ХОЛСТ
     [SerializeField] internal GameObject tempBackgroundObject; // объект для сохранения изначального вида бэкграунд-холста
     [SerializeField] GameObject display; // холст, на который выводится финально выбранная пикча
 
@@ -32,7 +32,30 @@ public class ImagesManager : MonoBehaviour
     internal List<Image> cards; // объект под список карточек
     public bool CardAnimatedMovedToDisplay {  get; private set; } // для чека, выбрана и анимирована ли уже какая-то карта на момент
 
-    private void Start()
+    public GameObject CloneObjectOnScene(GameObject objectToClone)
+    {
+        GameObject clone = new();
+
+        if (objectToClone != null)
+        {
+            clone = Instantiate(objectToClone, objectToClone.transform.parent);
+
+            // Установка копии в качестве дочернего объекта родителя оригинала
+            clone.transform.SetParent(objectToClone.transform.parent);
+
+            // Копирование всех параметров трансформации (позиция, вращение, масштаб)
+            clone.transform.localPosition = objectToClone.transform.localPosition;
+            clone.transform.localRotation = objectToClone.transform.localRotation;
+            clone.transform.localScale = objectToClone.transform.localScale;
+
+            // Помещение копии под оригиналом в иерархии
+            background.transform.SetSiblingIndex(transform.GetSiblingIndex() + 1);        
+        }
+        return clone;
+    }
+
+
+    private void Awake()
     {
         // сохраняем данные трансформа бэкграунда во временный объект
         tempBackgroundObject.transform.localScale = background.transform.localScale;
@@ -45,7 +68,10 @@ public class ImagesManager : MonoBehaviour
         {
             img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16
         };
-      
+        
+        // создаём фейковый бэкграунд, копируя оригинальный, изначально он должен быть неактивен
+        backgroundAlwaysSorted = CloneObjectOnScene(background);
+        backgroundAlwaysSorted.SetActive(false);
     }
 
     public Sequence ShuffleCardsSequence()

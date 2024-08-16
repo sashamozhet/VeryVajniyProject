@@ -3,7 +3,6 @@ using DG.Tweening;
 using System;
 using UnityEngine.UIElements;
 
-
 public class SuperManager : MonoBehaviour
 {
     [SerializeField] ButtonsManager buttonsManager;
@@ -17,9 +16,8 @@ public class SuperManager : MonoBehaviour
     public static Action GameStarted;
 
     private void Start()
-    {   
+    {
         GameStarted += GameProcessStarted; // подписываем метод начала игры на событие
-        //buttonsManager.startRandomingButton.onClick.AddListener(StartGameProcess); // добавляем функционал кнопке начала игры
     }
 
     public void StartGameProcess()
@@ -28,7 +26,7 @@ public class SuperManager : MonoBehaviour
     }
 
     public void GameProcessStarted()
-    {   
+    {
         buttonsManager.EnableOrDisableButtons(false); // отключаем кнопки
         var mySequence = DOTween.Sequence(); // создаём очередь выполнения твинов
 
@@ -42,7 +40,7 @@ public class SuperManager : MonoBehaviour
             mySequence.AppendCallback(() => { imagesManager.background.SetActive(true); }); // включаем настоящий бекграунд
             mySequence.AppendCallback(() => { imagesManager.backgroundAlwaysSorted.SetActive(false); }); // выключаем фейковый бекграунд
         }
-        
+
         mySequence.Append(imagesManager.ShuffleCardsSequence()); // добавляем в очередь перемешивание карточек
         mySequence.Append(imagesManager.background.transform.DOScale(1.03f, timeManager.durationBgPreGameTickAnimation).SetLoops(4, LoopType.Yoyo)); // скейлим бэкграунд туда-сюда
         mySequence.AppendCallback(() => { audioManager.PlayAudioWhenGameStarted(); });  // воспроизводим звук типа поехали
@@ -51,10 +49,26 @@ public class SuperManager : MonoBehaviour
         mySequence.Append(imagesManager.PreAnimateChosenCard(imagesManager.currentImg, timeManager.durationPreAnimateChosenCardTick)); // преанимация выбранной карты, скейлы туда-сюда
         mySequence.Append(imagesManager.background.transform.DOScale(0, timeManager.durationBgScaleToZeroWhenCardChosen)); // скейлим бэкграунд в 0, прежде, чем выдать итоговую карточку в центр списка
         mySequence.AppendInterval(timeManager.intervalPreChosenCardShown); // добавляем задержку перед следующим шагом
-        mySequence.AppendCallback(() => { audioManager.PlayAudioWhenCardChosen(); }); // воспроизводим звук типа бах карта выбрана
+
+        // Получаем категорию и описание карточки
+        mySequence.AppendCallback(() => {
+            audioManager.chosenCardClass = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardClass();
+            audioManager.chosenCardDescription = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardDescription();
+        });
+
         mySequence.Append(imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation)); // выводим карточку в центр экрана
-        mySequence.Append(buttonsManager.ChangeObjectTextSequence(buttonsManager.startRandomingButtonObject, "pick another")); // меняем текст главной кнопки
-        mySequence.AppendInterval(timeManager.intervalPreButtonsTurnOn).Append(buttonsManager.EnableOrDisableButtonsSequence(true)); // включаем кнопки после небольшой задержки
+
+        // At the end of the first sequence, we determine the chosen card and trigger the audio
+        mySequence.OnComplete(() => {
+            // Play the chosen card's audio and wait for its duration
+            float audioDuration = audioManager.PlayAudioWhenCardChosen();
+
+            // Start a new sequence for the actions after the audio finishes
+            var postAudioSequence = DOTween.Sequence();
+            postAudioSequence.AppendInterval(audioDuration); // Wait for the audio to finish
+            postAudioSequence.Append(buttonsManager.ChangeObjectTextSequence(buttonsManager.startRandomingButtonObject, "pick another")); // Меняем текст главной кнопки
+            postAudioSequence.AppendInterval(timeManager.intervalPreButtonsTurnOn); // Задержка перед включением кнопок
+            postAudioSequence.Append(buttonsManager.EnableOrDisableButtonsSequence(true)); // Включаем кнопки
+        });
     }
 }
-

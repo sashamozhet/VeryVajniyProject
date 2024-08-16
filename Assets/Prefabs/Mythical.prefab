@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4587775029799837494}
   - component: {fileID: 4184239876221410728}
   - component: {fileID: 369642453263057494}
+  - component: {fileID: 8289606453799333058}
   m_Layer: 5
   m_Name: Mythical
   m_TagString: Untagged
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9cd95346b58959a4da10a2875b31e8c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0776bfa407d4d11478158c0e1976baef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,6 +77,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8289606453799333058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527040332305796071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardClass: 3
 --- !u!1 &8253339314526336215
 GameObject:
   m_ObjectHideFlags: 0

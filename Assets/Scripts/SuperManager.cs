@@ -57,25 +57,19 @@ public class SuperManager : MonoBehaviour
         var parallelSequence = DOTween.Sequence();
 
         parallelSequence.AppendCallback(() => {
-            audioManager.chosenCardClass = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardClass();
-            audioManager.chosenCardDescription = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardDescription();
-        });
-
-        parallelSequence.AppendCallback(() => {
             // Start audio and animation simultaneously
-            float audioDuration = audioManager.PlayAudioWhenCardChosen(); // Start the audio
-            imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation).Play(); // Start the animation
+            var cardClass = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardClass();
+            var cardDescription = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardDescription();
+            audioManager.PlayAudioWhenCardChosen(cardClass, cardDescription); // Start the audio
+            imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation); // Start the animation
         });
 
         mySequence.Append(parallelSequence);
 
         // Use an OnComplete callback to ensure buttons are enabled after audio ends
         mySequence.OnComplete(() => {
-            // Ensure we enable buttons only after the audio ends
-            // If `PlayAudioWhenCardChosen` returns the duration of the audio clip, use it here
-            float audioDuration = audioManager.PlayAudioWhenCardChosen(); // Retrieve the duration
             DOTween.Sequence()
-                .AppendInterval(audioDuration)
+                .AppendInterval(audioManager.chosenClipToPlay.length)
                 .AppendCallback(() => {
                     buttonsManager.ChangeObjectTextSequence(buttonsManager.startRandomingButtonObject, "pick another"); // Меняем текст главной кнопки
                     buttonsManager.EnableOrDisableButtonsSequence(true); // Включаем кнопки

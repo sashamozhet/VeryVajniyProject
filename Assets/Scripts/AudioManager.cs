@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public int chosenCardClass;
-    public string chosenCardDescription;
-
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip gameStartedClip;
     public AudioClip chosenClipToPlay { get; internal set; }
@@ -78,21 +75,21 @@ public class AudioManager : MonoBehaviour
 
 
 
-    public void SetAuidoClipToPlay()
+    public void SetAuidoClipToPlay(int cardClass, string cardDescription)
     {
-        switch(chosenCardClass)
+        switch(cardClass)
         {
             case 0:
-                chosenClipToPlay = cardSoundsCommon[chosenCardDescription];
+                chosenClipToPlay = cardSoundsCommon[cardDescription];
                 break;
             case 1:
-                chosenClipToPlay = cardSoundsUncommon[chosenCardDescription];
+                chosenClipToPlay = cardSoundsUncommon[cardDescription];
                 break;
             case 2:
-                chosenClipToPlay = cardSoundsRare[chosenCardDescription];
+                chosenClipToPlay = cardSoundsRare[cardDescription];
                 break;
             case 3:
-                chosenClipToPlay = cardSoundsMythical[chosenCardDescription];
+                chosenClipToPlay = cardSoundsMythical[cardDescription];
                 break;
         }
     }
@@ -102,9 +99,9 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(gameStartedClip);
     }
 
-    public float PlayAudioWhenCardChosen()
+    public float PlayAudioWhenCardChosen(int cardClass, string cardDescription)
     {
-        SetAuidoClipToPlay();
+        SetAuidoClipToPlay(cardClass, cardDescription);
         audioSource.clip = chosenClipToPlay;
         audioSource.Play();
         return chosenClipToPlay.length;

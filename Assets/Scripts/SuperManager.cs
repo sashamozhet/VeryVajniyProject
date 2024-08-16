@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
-using UnityEngine.UIElements;
 
 public class SuperManager : MonoBehaviour
 {
@@ -35,7 +34,8 @@ public class SuperManager : MonoBehaviour
             mySequence.AppendCallback(() => { imagesManager.background.SetActive(false); }); // выключаем настоящий бекграунд
             mySequence.Append(imagesManager.backgroundAlwaysSorted.transform.DOScale(0, 0.000001f)); // скейлим в 0 неактивный фейковый бекграунд
             mySequence.AppendCallback(() => { imagesManager.backgroundAlwaysSorted.SetActive(true); }); // включаем фейковый бекграунд
-            mySequence.Append(imagesManager.backgroundAlwaysSorted.transform.DOScale(1, timeManager.durationSortedBgScaleTime)).AppendInterval(timeManager.intervalAfterSortedBgScaled); // скейлим фейковый бекграунд в 1, показывая его юзеру
+            mySequence.Append(imagesManager.backgroundAlwaysSorted.transform.DOScale(1, timeManager.durationSortedBgScaleTime))
+                .AppendInterval(timeManager.intervalAfterSortedBgScaled); // скейлим фейковый бекграунд в 1, показывая его юзеру
             mySequence.Append(imagesManager.BoardStateReturner()); // возвращаем состояние настоящего бейкграунда                      
             mySequence.AppendCallback(() => { imagesManager.background.SetActive(true); }); // включаем настоящий бекграунд
             mySequence.AppendCallback(() => { imagesManager.backgroundAlwaysSorted.SetActive(false); }); // выключаем фейковый бекграунд
@@ -44,9 +44,8 @@ public class SuperManager : MonoBehaviour
         mySequence.Append(imagesManager.ShuffleCardsSequence()); // добавляем в очередь перемешивание карточек
         mySequence.Append(imagesManager.background.transform.DOScale(1.03f, timeManager.durationBgPreGameTickAnimation).SetLoops(4, LoopType.Yoyo)); // скейлим бэкграунд туда-сюда
         mySequence.AppendInterval(timeManager.intervalAfterCardsShuffle);
-        //mySequence.AppendCallback(() => { audioManager.PlayAudioWhenGameStarted(); });  // воспроизводим звук типа поехали
 
-        // Start the sequence for moves on the board and play audio simultaneously
+        // Start the sequence for moves on the board
         var movesSequence = imagesManager.MakeMovesOnBoard(timeManager.intervalPreEveryMove, timeManager.intervalChangeWithEveryIteration, RandomsVariations.SimpleRandomMinMax(movesMin, movesMax));
         mySequence.Append(movesSequence);
 
@@ -54,29 +53,33 @@ public class SuperManager : MonoBehaviour
         mySequence.Append(imagesManager.PreAnimateChosenCard(imagesManager.currentImg, timeManager.durationPreAnimateChosenCardTick)); // преанимация выбранной карты, скейлы туда-сюда
         mySequence.Append(imagesManager.background.transform.DOScale(0, timeManager.durationBgScaleToZeroWhenCardChosen)); // скейлим бэкграунд в 0
 
-        // Add a parallel sequence to start audio and animation at the same time
-        var simultaneousSequence = DOTween.Sequence();
-        simultaneousSequence.AppendCallback(() => {
+        // Create a parallel sequence for the animation and audio
+        var parallelSequence = DOTween.Sequence();
+
+        parallelSequence.AppendCallback(() => {
             audioManager.chosenCardClass = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardClass();
             audioManager.chosenCardDescription = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardDescription();
         });
-        mySequence.AppendInterval(timeManager.intervalPreChosenCardShown); // добавляем задержку перед следующим шагом
 
-        simultaneousSequence.AppendCallback(() => {
-            float audioduration = audioManager.PlayAudioWhenCardChosen(); // Start the audio and get its duration
-            simultaneousSequence.AppendInterval(audioduration);
+        parallelSequence.AppendCallback(() => {
+            // Start audio and animation simultaneously
+            float audioDuration = audioManager.PlayAudioWhenCardChosen(); // Start the audio
+            imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation).Play(); // Start the animation
         });
-        simultaneousSequence.Append(imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation)); // Animate the chosen card
 
-        // Append the parallel sequence to the main sequence
-        mySequence.Append(simultaneousSequence);
+        mySequence.Append(parallelSequence);
 
- 
-
-        // Ensure the audio and animation are handled after the sequence completes
+        // Use an OnComplete callback to ensure buttons are enabled after audio ends
         mySequence.OnComplete(() => {
-            buttonsManager.ChangeObjectTextSequence(buttonsManager.startRandomingButtonObject, "pick another"); // Меняем текст главной кнопки
-            buttonsManager.EnableOrDisableButtonsSequence(true); // Включаем кнопки
+            // Ensure we enable buttons only after the audio ends
+            // If `PlayAudioWhenCardChosen` returns the duration of the audio clip, use it here
+            float audioDuration = audioManager.PlayAudioWhenCardChosen(); // Retrieve the duration
+            DOTween.Sequence()
+                .AppendInterval(audioDuration)
+                .AppendCallback(() => {
+                    buttonsManager.ChangeObjectTextSequence(buttonsManager.startRandomingButtonObject, "pick another"); // Меняем текст главной кнопки
+                    buttonsManager.EnableOrDisableButtonsSequence(true); // Включаем кнопки
+                });
         });
     }
 }

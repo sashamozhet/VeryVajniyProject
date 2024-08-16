@@ -89,7 +89,6 @@ public class ImagesManager : MonoBehaviour
         Sequence mySequence = DOTween.Sequence(); // создаём сиквенс
 
         var interval = defaultInterval; // всегда скидываем задержку между анимациями карт в дефолтное состояние
-               
         mySequence.PrependInterval(interval); // добавляем эту задержку в очередь выполнений
 
         var cardsOnBoard = background.GetComponentsInChildren<Image>(); // добавляем в новый список перемешанные карты в новом порядке
@@ -97,7 +96,6 @@ public class ImagesManager : MonoBehaviour
         int j = 0; // переменная для прохода по индексу карточек
         for (int i = 0; i <= randNum; i++)
         {
-            //mySequence.Append(cardsOnBoard[j].transform.DOPunchScale(new Vector2(0.1f, 0.1f), interval * 1.05f, 0, 0.05f)); // каждую карту увеличиваем немного и возвращаем в исходное, это старый вариант, сейчас работаем не с ним
             mySequence.Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, -10), interval * 1.05f)).AppendInterval(interval).Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, 0), interval * 1.05f)); // каждую карту увеличиваем немного и возвращаем в исходное
             mySequence.AppendInterval(interval); // после каждой анимации задержка перед анимацией следующей карты
             j = j < cardsOnBoard.Length - 1 ? j + 1 : 0; // если индекс карты в списке меньше максимально возможного, добавляем 1. если дошли до конца списка, а ходы еще есть, идём заново
@@ -106,6 +104,7 @@ public class ImagesManager : MonoBehaviour
         currentImg = cardsOnBoard[j]; // карта, на которой остановился цикл, и является картой, которую нужно изменить
         return mySequence;
     }
+
 
     public Sequence AnimateChosenCard(float scaleDuration)
     {   

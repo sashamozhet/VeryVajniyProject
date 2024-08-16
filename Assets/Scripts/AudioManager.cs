@@ -105,23 +105,8 @@ public class AudioManager : MonoBehaviour
     public float PlayAudioWhenCardChosen()
     {
         SetAuidoClipToPlay();
-        if (chosenClipToPlay == null)
-        {
-            Debug.LogError("Chosen card audio clip is null. Ensure it is properly assigned.");
-            return 0f;
-        }
-
-        if (audioSource == null)
-        {
-            Debug.LogError("AudioSource is null. Ensure it is properly assigned.");
-            return 0f;
-        }
-
         audioSource.clip = chosenClipToPlay;
         audioSource.Play();
-
-        Debug.Log("Playing audio clip: " + chosenClipToPlay.name + ", duration: " + chosenClipToPlay.length + " seconds");
-
         return chosenClipToPlay.length;
     }
 }

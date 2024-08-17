@@ -103,8 +103,9 @@ public class ImagesManager : MonoBehaviour
         int j = 0; // переменная для прохода по индексу карточек
         for (int i = 0; i <= randNum; i++)
         {
-            mySequence.Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, -10), interval * 1.05f)).AppendInterval(interval).Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, 0), interval * 1.05f)); // каждую карту поворачиваем немного и возвращаем в исходное
-            mySequence.AppendInterval(interval); // после каждой анимации задержка перед анимацией следующей карты
+            mySequence.Join(cardsOnBoard[j].transform.DOScale(new Vector3(1.07f, 1.07f, 1.07f), interval * 1.05f))
+                      .Append(cardsOnBoard[j].transform.DOScale(Vector3.one, interval * 1.05f))
+                      .AppendInterval(interval * 2); // после каждой анимации задержка перед анимацией следующей карты
             j = j < cardsOnBoard.Length - 1 ? j + 1 : 0; // если индекс карты в списке меньше максимально возможного, добавляем 1. если дошли до конца списка, а ходы еще есть, идём заново
             interval += intervalChange; // увеличиваем задержку между картами с каждым ходом, чтоб замедлить движение
         }
@@ -124,7 +125,7 @@ public class ImagesManager : MonoBehaviour
         seq.AppendCallback(() => { currentImg.transform.SetParent(display.transform); }); // переносим на холст display, чтоб вывести на передний ряд
         // Запускаем анимации параллельно: перемещение карты в центр и изменение её размера                                                                               
         seq.Join(currentImg.transform.DOMove(new Vector2(Screen.width / 2, Screen.height / 2), scaleDuration))
-           .Join(currentImg.transform.DOScale(3.3f, scaleDuration));
+           .Join(currentImg.transform.DOScale(3.1f, scaleDuration));
         return seq;        
     }
 

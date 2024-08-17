@@ -1,16 +1,18 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
+using TMPro;
 
 public class SuperManager : MonoBehaviour
 {
-    [SerializeField] ButtonsManager buttonsManager;
+    [SerializeField] UIManager uiManager;
     [SerializeField] ImagesManager imagesManager;
     [SerializeField] AudioManagerDiabloEdition audioManager;
     [SerializeField] TimeManager timeManager;
 
     [SerializeField] int movesMin;
     [SerializeField] int movesMax;
+
 
     public static Action GameStarted;
     public bool IsEventRunning { get; private set; }
@@ -20,11 +22,15 @@ public class SuperManager : MonoBehaviour
         GameStarted += GameProcessStarted; // подписываем метод начала игры на событие
     }
 
+
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !IsEventRunning)
         {
+            audioManager.PlayAudioWhenGameStarted();
             StartGameProcess();
+            uiManager.BlinkingTextControl(false);
         }
     }
 
@@ -76,8 +82,9 @@ public class SuperManager : MonoBehaviour
         mySequence.OnComplete(() => {
             DOTween.Sequence()
                 .AppendInterval(audioManager.ClipToPlayWhenCardChosen.length)
-                .AppendCallback(() => {
+                .AppendCallback(() => {                    
                     IsEventRunning = false;
+                    uiManager.BlinkingTextControl(true);
                 });
         });
     }

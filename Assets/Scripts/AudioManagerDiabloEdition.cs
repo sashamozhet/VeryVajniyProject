@@ -2,11 +2,11 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManagerDiabloEdition : MonoBehaviour, IAudioManager
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip gameStartedClip;
-    public AudioClip chosenClipToPlay { get; internal set; }
+    public AudioClip ClipToPlayWhenCardChosen { get; internal set; }
 
     // словари с набором карта+звук
     public Dictionary<string, AudioClip> cardSoundsCommon;
@@ -75,21 +75,22 @@ public class AudioManager : MonoBehaviour
 
 
 
-    public void SetAuidoClipToPlay(int cardClass, string cardDescription)
+    public void SetAuidoClipToPlay(ICardData cardData)
     {
-        switch(cardClass)
+        var CD = cardData as DiabloCardsData;
+        switch (CD.GetCardCategory())
         {
             case 0:
-                chosenClipToPlay = cardSoundsCommon[cardDescription];
+                ClipToPlayWhenCardChosen = cardSoundsCommon[CD.GetCardDescription()];
                 break;
             case 1:
-                chosenClipToPlay = cardSoundsUncommon[cardDescription];
+                ClipToPlayWhenCardChosen = cardSoundsUncommon[CD.GetCardDescription()];
                 break;
             case 2:
-                chosenClipToPlay = cardSoundsRare[cardDescription];
+                ClipToPlayWhenCardChosen = cardSoundsRare[CD.GetCardDescription()];
                 break;
             case 3:
-                chosenClipToPlay = cardSoundsMythical[cardDescription];
+                ClipToPlayWhenCardChosen = cardSoundsMythical[CD.GetCardDescription()];
                 break;
         }
     }
@@ -99,11 +100,11 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(gameStartedClip);
     }
 
-    public float PlayAudioWhenCardChosen(int cardClass, string cardDescription)
+    public float PlayAudioWhenCardChosen(ICardData cardData)
     {
-        SetAuidoClipToPlay(cardClass, cardDescription);
-        audioSource.clip = chosenClipToPlay;
+        SetAuidoClipToPlay(cardData);
+        audioSource.clip = ClipToPlayWhenCardChosen;
         audioSource.Play();
-        return chosenClipToPlay.length;
+        return ClipToPlayWhenCardChosen.length;
     }
 }

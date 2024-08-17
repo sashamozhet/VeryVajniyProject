@@ -643,6 +643,8 @@ MonoBehaviour:
   background: {fileID: 2065454870}
   tempBackgroundObject: {fileID: 1809499694}
   display: {fileID: 692323046}
+  darkenCanvasBackgroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.8039216}
+  canvasBackgroundImage: {fileID: 1323890926}
 --- !u!4 &761304812
 Transform:
   m_ObjectHideFlags: 0
@@ -1020,7 +1022,7 @@ GameObject:
   - component: {fileID: 1084800725}
   - component: {fileID: 1084800726}
   m_Layer: 0
-  m_Name: ImagesClassManager
+  m_Name: CardsDataDiabloEdition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1053,7 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 20
+  CardCategory: 0
   CardDescription: 
 --- !u!1 &1092205673
 GameObject:
@@ -1269,7 +1271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1674238939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3337,7 +3339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 2
+  CardCategory: 2
   CardDescription: baal
 --- !u!114 &3532627041297426228
 MonoBehaviour:
@@ -3351,7 +3353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 2
+  CardCategory: 2
   CardDescription: countess
 --- !u!114 &3532627041473011144
 MonoBehaviour:
@@ -3365,7 +3367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 2
+  CardCategory: 2
   CardDescription: andariel
 --- !u!222 &3855772584425030942
 CanvasRenderer:
@@ -4270,7 +4272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 0
+  CardCategory: 0
   CardDescription: baal
 --- !u!114 &6671367255560148654
 MonoBehaviour:
@@ -4284,7 +4286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 0
+  CardCategory: 0
   CardDescription: countess
 --- !u!114 &6671367255658942027
 MonoBehaviour:
@@ -4298,7 +4300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 0
+  CardCategory: 0
   CardDescription: mephisto
 --- !u!114 &6671367255814070257
 MonoBehaviour:
@@ -4312,7 +4314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 0
+  CardCategory: 0
   CardDescription: nihla
 --- !u!114 &6671367255918008823
 MonoBehaviour:
@@ -4326,7 +4328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 0
+  CardCategory: 0
   CardDescription: diablo
 --- !u!114 &6671367256016649622
 MonoBehaviour:
@@ -4340,7 +4342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 0
+  CardCategory: 0
   CardDescription: andariel
 --- !u!114 &6671367256977429119
 MonoBehaviour:
@@ -4354,7 +4356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 0
+  CardCategory: 0
   CardDescription: summoner
 --- !u!224 &6744046567508570508
 RectTransform:
@@ -4449,7 +4451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 1
+  CardCategory: 1
   CardDescription: none
 --- !u!114 &7574284911006112202
 MonoBehaviour:
@@ -4463,7 +4465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 1
+  CardCategory: 1
   CardDescription: none
 --- !u!114 &7574284911773822121
 MonoBehaviour:
@@ -4477,7 +4479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 1
+  CardCategory: 1
   CardDescription: none
 --- !u!114 &7574284911894109512
 MonoBehaviour:
@@ -4491,7 +4493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 1
+  CardCategory: 1
   CardDescription: none
 --- !u!114 &7574284911904229399
 MonoBehaviour:
@@ -4505,7 +4507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 1
+  CardCategory: 1
   CardDescription: none
 --- !u!224 &8233965622097961935
 RectTransform:
@@ -4597,7 +4599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c646d18b7820240b30ab5cfcf1e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardClass: 3
+  CardCategory: 3
   CardDescription: diablo
 --- !u!1 &8624477934207880766
 GameObject:

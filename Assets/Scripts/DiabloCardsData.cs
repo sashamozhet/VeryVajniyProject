@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardsClassesAndDescriptionsManager : MonoBehaviour
+public class DiabloCardsData : MonoBehaviour, ICardData
 {
-    [SerializeField] int CardClass;
+    [SerializeField] int CardCategory;
     [SerializeField] string CardDescription;
 
 
 
-    public int GetCardClass()
+    public int GetCardCategory()
     {
-        return CardClass;
+        return CardCategory;
     }
 
     public string GetCardDescription()

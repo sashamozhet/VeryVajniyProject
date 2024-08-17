@@ -6,27 +6,37 @@ public class SuperManager : MonoBehaviour
 {
     [SerializeField] ButtonsManager buttonsManager;
     [SerializeField] ImagesManager imagesManager;
-    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioManagerDiabloEdition audioManager;
     [SerializeField] TimeManager timeManager;
 
     [SerializeField] int movesMin;
     [SerializeField] int movesMax;
 
     public static Action GameStarted;
+    public bool IsEventRunning { get; private set; }
 
     private void Start()
     {
         GameStarted += GameProcessStarted; // подписываем метод начала игры на событие
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !IsEventRunning)
+        {
+            StartGameProcess();
+        }
+    }
+
     public void StartGameProcess()
     {
+        IsEventRunning = true;
         GameStarted?.Invoke();
     }
 
     public void GameProcessStarted()
     {
-        buttonsManager.EnableOrDisableButtons(false); // отключаем кнопки
+        imagesManager.canvasBackgroundImage.color = imagesManager.defaultCanvasBackgroundImageColor; // скидываем цвет фонового изображения на дефолтный
         var mySequence = DOTween.Sequence(); // создаём очередь выполнения твинов
 
         if (imagesManager.CardAnimatedMovedToDisplay)
@@ -45,34 +55,29 @@ public class SuperManager : MonoBehaviour
         mySequence.Append(imagesManager.background.transform.DOScale(1.03f, timeManager.durationBgPreGameTickAnimation).SetLoops(4, LoopType.Yoyo)); // скейлим бэкграунд туда-сюда
         mySequence.AppendInterval(timeManager.intervalAfterCardsShuffle);
 
-        // Start the sequence for moves on the board
+        // Запускаем сиквенс, отвечающий за движение по карте
         var movesSequence = imagesManager.MakeMovesOnBoard(timeManager.intervalPreEveryMove, timeManager.intervalChangeWithEveryIteration, RandomsVariations.SimpleRandomMinMax(movesMin, movesMax));
         mySequence.Append(movesSequence);
 
-        // Pre-animate the chosen card and scale background to zero
         mySequence.Append(imagesManager.PreAnimateChosenCard(imagesManager.currentImg, timeManager.durationPreAnimateChosenCardTick)); // преанимация выбранной карты, скейлы туда-сюда
-        mySequence.Append(imagesManager.background.transform.DOScale(0, timeManager.durationBgScaleToZeroWhenCardChosen)); // скейлим бэкграунд в 0
+        mySequence.Append(imagesManager.background.transform.DOScale(0, timeManager.durationBgScaleToZeroWhenCardChosen)) // скейлим бэкграунд в 0
+                       .Join(imagesManager.canvasBackgroundImage.DOColor(imagesManager.darkenCanvasBackgroundColor, timeManager.durationBgScaleToZeroWhenCardChosen / 4)); // параллельно затемняем фон
 
-        // Create a parallel sequence for the animation and audio
+        // Создаём параллельный сиквенс, чтоб анимацию выбранной карты и проигрываемое аудио запустить одновременно
         var parallelSequence = DOTween.Sequence();
-
         parallelSequence.AppendCallback(() => {
-            // Start audio and animation simultaneously
-            var cardClass = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardClass();
-            var cardDescription = imagesManager.currentImg.GetComponent<CardsClassesAndDescriptionsManager>().GetCardDescription();
-            audioManager.PlayAudioWhenCardChosen(cardClass, cardDescription); // Start the audio
-            imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation); // Start the animation
+            audioManager.PlayAudioWhenCardChosen(imagesManager.currentImg.GetComponent<ICardData>()); // Запускаем аудио, выбираемое в зависимости от картсета и карты
+            imagesManager.AnimateChosenCard(timeManager.durationChosenCardScaleAnimation); // Запускаем параллельно анимацию выбранной карты
         });
 
         mySequence.Append(parallelSequence);
 
-        // Use an OnComplete callback to ensure buttons are enabled after audio ends
+        // После того, как аудио доиграет, меняем текст основной кнопки, делаем ее активной
         mySequence.OnComplete(() => {
             DOTween.Sequence()
-                .AppendInterval(audioManager.chosenClipToPlay.length)
+                .AppendInterval(audioManager.ClipToPlayWhenCardChosen.length)
                 .AppendCallback(() => {
-                    buttonsManager.ChangeObjectTextSequence(buttonsManager.startRandomingButtonObject, "pick another"); // Меняем текст главной кнопки
-                    buttonsManager.EnableOrDisableButtonsSequence(true); // Включаем кнопки
+                    IsEventRunning = false;
                 });
         });
     }

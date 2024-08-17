@@ -26,10 +26,14 @@ public class ImagesManager : MonoBehaviour
     internal GameObject backgroundAlwaysSorted; // ФЕЙК ХОЛСТ
     [SerializeField] internal GameObject tempBackgroundObject; // объект для сохранения изначального вида бэкграунд-холста
     [SerializeField] GameObject display; // холст, на который выводится финально выбранная пикча
+    public Color darkenCanvasBackgroundColor; // цвет-затемнитель для фона сцены
+    public Image canvasBackgroundImage; // фон сцены
+    
 
-    internal Image currentImg;  //текущее состояние картинки?
+    public Color defaultCanvasBackgroundImageColor { get; internal set; } // сохраняем сюда изначальный цвет фона сцены
     private Image prevImageState; // сохраняем сюда изначальные параметры изображения
     internal List<Image> cards; // объект под список карточек
+    public Image currentImg { get; private set; } // объект под состояние выбранной карты
     public bool CardAnimatedMovedToDisplay {  get; private set; } // для чека, выбрана и анимирована ли уже какая-то карта на момент
 
     public GameObject CloneObjectOnScene(GameObject objectToClone)
@@ -68,10 +72,14 @@ public class ImagesManager : MonoBehaviour
         {
             img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16
         };
-        
+
         // создаём фейковый бэкграунд, копируя оригинальный, изначально он должен быть неактивен
         backgroundAlwaysSorted = CloneObjectOnScene(background);
         backgroundAlwaysSorted.SetActive(false);
+
+        // сохраняем данные изначального цвета фонового изображения во временный объект
+        defaultCanvasBackgroundImageColor = canvasBackgroundImage.color;
+
     }
 
     public Sequence ShuffleCardsSequence()
@@ -87,7 +95,6 @@ public class ImagesManager : MonoBehaviour
     public Sequence MakeMovesOnBoard(float defaultInterval, float intervalChange, int randNum)
     {
         Sequence mySequence = DOTween.Sequence(); // создаём сиквенс
-
         var interval = defaultInterval; // всегда скидываем задержку между анимациями карт в дефолтное состояние
         mySequence.PrependInterval(interval); // добавляем эту задержку в очередь выполнений
 
@@ -96,7 +103,7 @@ public class ImagesManager : MonoBehaviour
         int j = 0; // переменная для прохода по индексу карточек
         for (int i = 0; i <= randNum; i++)
         {
-            mySequence.Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, -10), interval * 1.05f)).AppendInterval(interval).Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, 0), interval * 1.05f)); // каждую карту увеличиваем немного и возвращаем в исходное
+            mySequence.Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, -10), interval * 1.05f)).AppendInterval(interval).Append(cardsOnBoard[j].transform.DORotate(new Vector3(0, 0, 0), interval * 1.05f)); // каждую карту поворачиваем немного и возвращаем в исходное
             mySequence.AppendInterval(interval); // после каждой анимации задержка перед анимацией следующей карты
             j = j < cardsOnBoard.Length - 1 ? j + 1 : 0; // если индекс карты в списке меньше максимально возможного, добавляем 1. если дошли до конца списка, а ходы еще есть, идём заново
             interval += intervalChange; // увеличиваем задержку между картами с каждым ходом, чтоб замедлить движение
@@ -115,8 +122,10 @@ public class ImagesManager : MonoBehaviour
         Sequence seq = DOTween.Sequence(); // создаём очередь выполнения
         CardAnimatedMovedToDisplay = true; // пикча изменена, теперь 2ую подряд мы изменить не сможем
         seq.AppendCallback(() => { currentImg.transform.SetParent(display.transform); }); // переносим на холст display, чтоб вывести на передний ряд
-        seq.AppendCallback(() => { currentImg.transform.position = new Vector2(Screen.width / 2, Screen.height / 2); }); // выносим в центр экрана
-        return seq.Append(currentImg.transform.DOScale(1.5f, scaleDuration));        
+        // Запускаем анимации параллельно: перемещение карты в центр и изменение её размера                                                                               
+        seq.Join(currentImg.transform.DOMove(new Vector2(Screen.width / 2, Screen.height / 2), scaleDuration))
+           .Join(currentImg.transform.DOScale(3.3f, scaleDuration));
+        return seq;        
     }
 
     public Sequence PreAnimateChosenCard(Image image, float ticksDuration)

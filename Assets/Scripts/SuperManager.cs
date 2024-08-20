@@ -48,7 +48,7 @@ public class SuperManager : MonoBehaviour
         imagesManager.canvasBackgroundImage.color = imagesManager.defaultCanvasBackgroundImageColor; // скидываем цвет фонового изображения на дефолтный
         var mySequence = DOTween.Sequence(); // создаём очередь выполнения твинов
 
-        if (imagesManager.CardAnimatedMovedToDisplay)
+        if (ImagesManager.CardAnimatedMovedToDisplay)
         {
             mySequence.AppendCallback(() => { imagesManager.background.SetActive(false); }); // выключаем настоящий бекграунд
             mySequence.Append(imagesManager.backgroundAlwaysSorted.transform.DOScale(0, 0.000001f)); // скейлим в 0 неактивный фейковый бекграунд

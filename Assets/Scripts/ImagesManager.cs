@@ -34,7 +34,7 @@ public class ImagesManager : MonoBehaviour
     private Image prevImageState; // сохраняем сюда изначальные параметры изображения
     internal List<Image> cards; // объект под список карточек
     public Image currentImg { get; private set; } // объект под состояние выбранной карты
-    public bool CardAnimatedMovedToDisplay {  get; private set; } // для чека, выбрана и анимирована ли уже какая-то карта на момент
+    public static bool CardAnimatedMovedToDisplay {  get; private set; } // для чека, выбрана и анимирована ли уже какая-то карта на момент
 
     public GameObject CloneObjectOnScene(GameObject objectToClone)
     {

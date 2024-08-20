@@ -50,6 +50,12 @@ public class UIManager : MonoBehaviour
 
     public void BlinkingTextControl()
     {
+        if (ImagesManager.CardAnimatedMovedToDisplay)
+        {
+            pressSpaceToPlayText.transform.position = new Vector2(Screen.width / 2, Screen.height - 80);
+            pressSpaceToPlayText.transform.localScale = new Vector2(3, 3);
+        }
+
         if (!SuperManager.IsEventRunning)
         {   
             pressSpaceToPlayText.gameObject.SetActive(true);

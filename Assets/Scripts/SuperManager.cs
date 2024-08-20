@@ -15,11 +15,16 @@ public class SuperManager : MonoBehaviour
 
 
     public static Action GameStarted;
-    public bool IsEventRunning { get; private set; }
+    public static bool IsEventRunning { get; private set; }
 
     private void Start()
     {
         GameStarted += GameProcessStarted; // подписываем метод начала игры на событие
+    }
+
+    private void OnDisable()
+    {
+        GameStarted -= GameProcessStarted; // отписка от события чтоб предотвратить утечки памяти
     }
 
 
@@ -28,9 +33,7 @@ public class SuperManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !IsEventRunning)
         {
-            audioManager.PlayAudioWhenGameStarted();
             StartGameProcess();
-            uiManager.BlinkingTextControl(false);
         }
     }
 
@@ -84,7 +87,7 @@ public class SuperManager : MonoBehaviour
                 .AppendInterval(audioManager.ClipToPlayWhenCardChosen.length)
                 .AppendCallback(() => {                    
                     IsEventRunning = false;
-                    uiManager.BlinkingTextControl(true);
+                    uiManager.BlinkingTextControl();
                 });
         });
     }

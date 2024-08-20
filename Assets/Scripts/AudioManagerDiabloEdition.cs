@@ -8,13 +8,13 @@ public class AudioManagerDiabloEdition : MonoBehaviour, IAudioManager
     [SerializeField] AudioClip gameStartedClip;
     public AudioClip ClipToPlayWhenCardChosen { get; internal set; }
 
-    // словари с набором карта+звук
+    // СЃР»РѕРІР°СЂРё СЃ РЅР°Р±РѕСЂРѕРј РєР°СЂС‚Р°+Р·РІСѓРє
     public Dictionary<string, AudioClip> cardSoundsCommon;
     public Dictionary<string, AudioClip> cardSoundsUncommon;
     public Dictionary<string, AudioClip> cardSoundsRare;
     public Dictionary<string, AudioClip> cardSoundsMythical;
 
-    // аудиоклипы под common-карты
+    // Р°СѓРґРёРѕРєР»РёРїС‹ РїРѕРґ common-РєР°СЂС‚С‹
     [SerializeField] AudioClip countessCommonCardSound;
     [SerializeField] AudioClip andarielCommonCardSound;
     [SerializeField] AudioClip mephistoCommonCardSound;
@@ -23,21 +23,21 @@ public class AudioManagerDiabloEdition : MonoBehaviour, IAudioManager
     [SerializeField] AudioClip nihlaCommonCardSound;
     [SerializeField] AudioClip summonerCommonCardSound;
 
-    // аудиоклипы под uncommon-карты
+    // Р°СѓРґРёРѕРєР»РёРїС‹ РїРѕРґ uncommon-РєР°СЂС‚С‹
     [SerializeField] AudioClip noneUncommonCardSound;
 
-    // аудиоклипы под rare-карты
+    // Р°СѓРґРёРѕРєР»РёРїС‹ РїРѕРґ rare-РєР°СЂС‚С‹
     [SerializeField] AudioClip andarielRareCardSound;
     [SerializeField] AudioClip countessRareCardSound;
     [SerializeField] AudioClip baalRareCardSound;
 
-    // аудиоклипы под mythical-карты
+    // Р°СѓРґРёРѕРєР»РёРїС‹ РїРѕРґ mythical-РєР°СЂС‚С‹
     [SerializeField] AudioClip diabloMythicalCardSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        // создаём словарь с зависимостью аудиоклипов от выбранной карты для категории common
+        // СЃРѕР·РґР°С‘Рј СЃР»РѕРІР°СЂСЊ СЃ Р·Р°РІРёСЃРёРјРѕСЃС‚СЊСЋ Р°СѓРґРёРѕРєР»РёРїРѕРІ РѕС‚ РІС‹Р±СЂР°РЅРЅРѕР№ РєР°СЂС‚С‹ РґР»СЏ РєР°С‚РµРіРѕСЂРёРё common
         cardSoundsCommon = new Dictionary<string, AudioClip>()
         {
             { "countess", countessCommonCardSound },
@@ -49,14 +49,14 @@ public class AudioManagerDiabloEdition : MonoBehaviour, IAudioManager
             { "summoner", summonerCommonCardSound },
         };
 
-        // создаём словарь с зависимостью аудиоклипов от выбранной карты для категории uncommon
+        // СЃРѕР·РґР°С‘Рј СЃР»РѕРІР°СЂСЊ СЃ Р·Р°РІРёСЃРёРјРѕСЃС‚СЊСЋ Р°СѓРґРёРѕРєР»РёРїРѕРІ РѕС‚ РІС‹Р±СЂР°РЅРЅРѕР№ РєР°СЂС‚С‹ РґР»СЏ РєР°С‚РµРіРѕСЂРёРё uncommon
         cardSoundsUncommon = new Dictionary<string, AudioClip>()
         {
             { "none", noneUncommonCardSound },
 
         };
 
-        // создаём словарь с зависимостью аудиоклипов от выбранной карты для категории rare
+        // СЃРѕР·РґР°С‘Рј СЃР»РѕРІР°СЂСЊ СЃ Р·Р°РІРёСЃРёРјРѕСЃС‚СЊСЋ Р°СѓРґРёРѕРєР»РёРїРѕРІ РѕС‚ РІС‹Р±СЂР°РЅРЅРѕР№ РєР°СЂС‚С‹ РґР»СЏ РєР°С‚РµРіРѕСЂРёРё rare
         cardSoundsRare = new Dictionary<string, AudioClip>()
         {
             { "andariel", andarielRareCardSound },
@@ -65,12 +65,14 @@ public class AudioManagerDiabloEdition : MonoBehaviour, IAudioManager
 
         };
 
-        // создаём словарь с зависимостью аудиоклипов от выбранной карты для категории mythical
+        // СЃРѕР·РґР°С‘Рј СЃР»РѕРІР°СЂСЊ СЃ Р·Р°РІРёСЃРёРјРѕСЃС‚СЊСЋ Р°СѓРґРёРѕРєР»РёРїРѕРІ РѕС‚ РІС‹Р±СЂР°РЅРЅРѕР№ РєР°СЂС‚С‹ РґР»СЏ РєР°С‚РµРіРѕСЂРёРё mythical
         cardSoundsMythical = new Dictionary<string, AudioClip>()
         {
             { "diablo", diabloMythicalCardSound },
 
         };
+
+        SuperManager.GameStarted += PlayAudioWhenGameStarted; // РїРѕРґРїРёСЃС‹РІР°РµРј РјРµС‚РѕРґ РІРѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёСЏ СЃС‚Р°СЂС‚РѕРІРѕРіРѕ Р·РІСѓРєР° РЅР° СЃРѕР±С‹С‚РёРµ
     }
 
 

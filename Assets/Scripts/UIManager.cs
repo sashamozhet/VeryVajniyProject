@@ -19,8 +19,9 @@ public class UIManager : MonoBehaviour
 
 
     private void Start()
-    {
-        BlinkingTextControl(true);
+    {   
+        SuperManager.GameStarted += BlinkingTextControl;
+        BlinkingTextControl();
     }
 
     public void ChangeObjectText(GameObject obj, string newText)
@@ -47,24 +48,20 @@ public class UIManager : MonoBehaviour
         return DOTween.Sequence().AppendCallback(() => { EnableOrDisableButtons(isEnable); });
     }
 
-    public void BlinkingTextControl(bool setTrueOrFalse)
+    public void BlinkingTextControl()
     {
-        // Останавливаем текущую анимацию
-        DOTween.Kill("BlinkingText");
-
-        pressSpaceToPlayText.gameObject.SetActive(setTrueOrFalse);
-        if (setTrueOrFalse)
-        {
-            // Устанавливаем текст на немного затемнённый перед запуском анимации
+        if (!SuperManager.IsEventRunning)
+        {   
+            pressSpaceToPlayText.gameObject.SetActive(true);
             pressSpaceToPlayText.alpha = 0.4f;
-
-            // Запускаем анимацию мигания
-            pressSpaceToPlayText.DOFade(1f, timeManager.durationBlinkingTextLoop).SetLoops(-1, LoopType.Yoyo).SetId("BlinkingText");
+            pressSpaceToPlayText.DOFade(1f, timeManager.durationBlinkingTextLoop).SetLoops(-1, LoopType.Yoyo).SetId("pressspacetoplay");
         }
         else
         {
-            // Сбрасываем прозрачность текста к 1 при его отключении
-            pressSpaceToPlayText.alpha = 1f;
+            pressSpaceToPlayText.gameObject.SetActive(false);
+            DOTween.Kill("pressspacetoplay");
         }
+        
+
     }
 }

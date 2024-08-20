@@ -13,5 +13,5 @@ public class TimeManager: MonoBehaviour
     [SerializeField] internal float durationBgScaleToZeroWhenCardChosen = 1f; // время скейла в 0 бэкграунд-холста, когда итоговая карта выбрана
     [SerializeField] internal float durationChosenCardScaleAnimation = 2f; // время показа анимации скейла выбранной итоговой карты
     [SerializeField] internal float intervalPreButtonsTurnOn = 0.5f; // задержка перед включением кнопок после показа итоговой карты
-    [SerializeField] internal float durationBlinkingTextLoop = 0.9f; // время 1го тика мигающего текста 
+    [SerializeField] internal float durationBlinkingTextLoop; // время 1го тика мигающего текста 
 }

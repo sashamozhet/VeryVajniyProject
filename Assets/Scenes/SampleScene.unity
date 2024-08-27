@@ -852,7 +852,7 @@ MonoBehaviour:
   background: {fileID: 2065454870}
   tempBackgroundObject: {fileID: 1809499694}
   display: {fileID: 692323046}
-  darkenCanvasBackgroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.8039216}
+  darkenCanvasBackgroundColor: {r: 0.066037714, g: 0.05756495, b: 0.05756495, a: 0.8235294}
   canvasBackgroundImage: {fileID: 336170}
 --- !u!4 &761304812
 Transform:
@@ -1301,8 +1301,8 @@ MonoBehaviour:
   imagesManager: {fileID: 761304811}
   audioManager: {fileID: 1032322252}
   timeManager: {fileID: 991228869}
-  movesMin: 27
-  movesMax: 30
+  movesMin: 24
+  movesMax: 27
 --- !u!4 &1092205675
 Transform:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
-using TMPro;
 
 public class SuperManager : MonoBehaviour
 {
@@ -9,6 +8,9 @@ public class SuperManager : MonoBehaviour
     [SerializeField] ImagesManager imagesManager;
     [SerializeField] AudioManagerDiabloEdition audioManager;
     [SerializeField] TimeManager timeManager;
+    [SerializeField] QuantityManager quantityManager;
+    [SerializeField] ColorManager colorManager;
+    [SerializeField] SizeManager sizeManager;
 
     [SerializeField] int movesMin;
     [SerializeField] int movesMax;
@@ -61,16 +63,17 @@ public class SuperManager : MonoBehaviour
         }
 
         mySequence.Append(imagesManager.ShuffleCardsSequence()); // добавляем в очередь перемешивание карточек
-        mySequence.Append(imagesManager.background.transform.DOScale(1.03f, timeManager.durationBgPreGameTickAnimation).SetLoops(4, LoopType.Yoyo)); // скейлим бэкграунд туда-сюда
+        mySequence.Append(imagesManager.background.transform.DOScale(sizeManager.sizeBgPreGameTick, timeManager.durationBgPreGameTickAnimation).SetLoops(quantityManager.quanBgScalePreMovementTics, LoopType.Yoyo)); // скейлим бэкграунд туда-сюда
         mySequence.AppendInterval(timeManager.intervalAfterCardsShuffle);
 
         // Запускаем сиквенс, отвечающий за движение по карте
-        var movesSequence = imagesManager.MakeMovesOnBoard(timeManager.intervalPreEveryMove, timeManager.intervalChangeWithEveryIteration, RandomsVariations.SimpleRandomMinMax(movesMin, movesMax));
+        var movesSequence = imagesManager.MakeMovesOnBoard(timeManager.intervalPreEveryMove, timeManager.intervalChangeWithEveryIteration, RandomsVariations.SimpleRandomMinMax(quantityManager.quanMinMovementOnBoard, quantityManager.quanMaxMovementOnBoard));
         mySequence.Append(movesSequence);
 
+        float channelOpacity = colorManager.darkenBackgroundOpacity; // получаем из коломанагера показатели каналов цвета для затемнения экрана
         mySequence.Append(imagesManager.PreAnimateChosenCard(imagesManager.currentImg, timeManager.durationPreAnimateChosenCardTick)); // преанимация выбранной карты, скейлы туда-сюда
         mySequence.Append(imagesManager.background.transform.DOScale(0, timeManager.durationBgScaleToZeroWhenCardChosen)) // скейлим бэкграунд в 0
-                       .Join(imagesManager.canvasBackgroundImage.DOColor(imagesManager.darkenCanvasBackgroundColor, timeManager.durationBgScaleToZeroWhenCardChosen / 4)); // параллельно затемняем фон
+                       .Join(imagesManager.canvasBackgroundImage.DOColor(new Color(channelOpacity, channelOpacity, channelOpacity), timeManager.durationBgScaleToZeroWhenCardChosen / 4)); // параллельно затемняем фон
 
         // Создаём параллельный сиквенс, чтоб анимацию выбранной карты и проигрываемое аудио запустить одновременно
         var parallelSequence = DOTween.Sequence();

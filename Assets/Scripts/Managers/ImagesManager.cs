@@ -26,9 +26,12 @@ public class ImagesManager : MonoBehaviour
     internal GameObject backgroundAlwaysSorted; // ФЕЙК ХОЛСТ
     [SerializeField] internal GameObject tempBackgroundObject; // объект для сохранения изначального вида бэкграунд-холста
     [SerializeField] GameObject display; // холст, на который выводится финально выбранная пикча
-    public Color darkenCanvasBackgroundColor; // цвет-затемнитель для фона сцены
     public Image canvasBackgroundImage; // фон сцены
-    
+
+    [SerializeField] QuantityManager quantityManager;
+    [SerializeField] ColorManager colorManager;
+    [SerializeField] SizeManager sizeManager;
+
 
     public Color defaultCanvasBackgroundImageColor { get; internal set; } // сохраняем сюда изначальный цвет фона сцены
     private Image prevImageState; // сохраняем сюда изначальные параметры изображения
@@ -103,7 +106,9 @@ public class ImagesManager : MonoBehaviour
         int j = 0; // переменная для прохода по индексу карточек
         for (int i = 0; i <= randNum; i++)
         {
-            mySequence.Join(cardsOnBoard[j].transform.DOScale(new Vector3(1.07f, 1.07f, 1.07f), interval * 1.05f))
+            var cardSizeMultiplier = sizeManager.sizeCardEveryMoveEnlarged; // получаем данные о том, во сколько раз будем увеличивать карты
+            var mult = new Vector3(cardSizeMultiplier, cardSizeMultiplier, cardSizeMultiplier); // создаём новый вектор
+            mySequence.Join(cardsOnBoard[j].transform.DOScale(mult, interval * 1.05f)) // на основе этого вектора увеличиваем карты
                       .Append(cardsOnBoard[j].transform.DOScale(Vector3.one, interval * 1.05f))
                       .AppendInterval(interval * 2); // после каждой анимации задержка перед анимацией следующей карты
             j = j < cardsOnBoard.Length - 1 ? j + 1 : 0; // если индекс карты в списке меньше максимально возможного, добавляем 1. если дошли до конца списка, а ходы еще есть, идём заново
@@ -125,14 +130,14 @@ public class ImagesManager : MonoBehaviour
         seq.AppendCallback(() => { currentImg.transform.SetParent(display.transform); }); // переносим на холст display, чтоб вывести на передний ряд
         // Запускаем анимации параллельно: перемещение карты в центр и изменение её размера                                                                               
         seq.Join(currentImg.transform.DOMove(new Vector2(Screen.width / 2, Screen.height / 2), scaleDuration))
-           .Join(currentImg.transform.DOScale(3.1f, scaleDuration));
+           .Join(currentImg.transform.DOScale(sizeManager.sizeCardChosenFinalSize, scaleDuration));
         return seq;        
     }
 
     public Sequence PreAnimateChosenCard(Image image, float ticksDuration)
     {
         Sequence seq = DOTween.Sequence(); // создаём очередь выполнения
-        seq.Append(image.transform.DOScale(1.02f, ticksDuration)).Append(image.transform.DOScale(0.98f, ticksDuration)).SetLoops(6);
+        seq.Append(image.transform.DOScale(1.02f, ticksDuration)).Append(image.transform.DOScale(0.98f, ticksDuration)).SetLoops(quantityManager.quanPreAnimateChosenCardTics);
         return seq;
     }
     public Sequence BoardStateReturner()

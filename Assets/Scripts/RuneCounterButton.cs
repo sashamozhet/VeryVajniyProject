@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
 public class RuneCounterButton : MonoBehaviour, IPointerClickHandler
 {
     private int runeCount = 0;
@@ -39,6 +38,7 @@ public class RuneCounterButton : MonoBehaviour, IPointerClickHandler
             if (runeCount > 0) { runeCount--; }
         }
         RuneCounterTextControl();
+
     }
 
     public void PlaySound()

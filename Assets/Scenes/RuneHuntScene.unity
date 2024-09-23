@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 646025930}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 20ecc2419fdc35f4fb4918ae7e5a1cf7, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -213,7 +217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (4)
+      value: Eth
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Eth
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -228,6 +236,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203154466}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a198e83896cfbb94fae0a18122bfc9ce, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -312,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Jah
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -325,6 +341,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203154466}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d3fd7fc8f59e8047b1999455d82ab68, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -409,6 +429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Gul
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -422,6 +446,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 546145039}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 18f94e36f1d8ff94ebdedbc37f347e0e, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -506,6 +534,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Dol
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -519,6 +551,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 646025930}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 83a664f4953d3164cacfca9bde33f143, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -601,7 +637,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (7)
+      value: Ral
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Ral
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -616,6 +656,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 546145039}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82add05cbace3a645a9d6f48a7130def, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -699,6 +743,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Sol
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -814,6 +862,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 646025930}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d15f9c39e3ee3bc458bab96a73b64f83, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -896,7 +948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (3)
+      value: Nef
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Nef
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1019,6 +1075,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369423558}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3814ba8346ffd3744a4fbfcef5a3c7c3, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1103,6 +1163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Ko
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1139,7 +1203,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4688645562612871009}
+  - {fileID: 4688645563060740370}
   - {fileID: 4688645562279366353}
   - {fileID: 4688645562977546864}
   - {fileID: 4688645562002328619}
@@ -1393,6 +1457,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203154466}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8789a95c0cb02fc44b7807cf488ff859, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1476,6 +1544,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Sur
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1490,6 +1562,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 646025930}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0640c684a189bd84189ee3bf031b9ba1, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1572,7 +1648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (6)
+      value: Tal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Tal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1587,6 +1667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369423558}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 505b7ef30bd7ea34c8ff015b5e2f4d87, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1670,6 +1754,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Pul
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1825,6 +1913,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 646025930}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 83c26ec56b7f9d24291ad74577481424, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1907,7 +1999,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (2)
+      value: Tir
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Tir
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1922,6 +2018,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 499488311}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: defef5cd4c0e01a4eadfb7ca71cfcabf, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2006,6 +2106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Zod
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2019,6 +2123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369423558}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ccf2dbbfecc8c7a40b9e929ec6bde0b1, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2102,6 +2210,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Fal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2209,6 +2321,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 546145039}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 97e9357df25e3f948aeedbf1a581bc6c, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2291,7 +2407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (2)
+      value: Amn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Amn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2306,6 +2426,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 546145039}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7291962975c403d478745c8fecd1182f, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2390,6 +2514,115 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Shael
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+--- !u!1001 &1026625696
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 646025930}
+    m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae2da2edce031a94191f586524fa80aa, type: 3}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Name
+      value: El
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: El
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2403,6 +2636,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369423558}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6516549fa17154e4fad003795410068e, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2487,6 +2724,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Ist
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2500,6 +2741,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203154466}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 616941ef7ddeb2b4ca4af5b8114ddec2, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2583,6 +2828,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Ber
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2597,6 +2846,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 646025930}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dd573a3e6a392df43a345a6e68616fc9, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2679,7 +2932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (5)
+      value: Ith
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Ith
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2694,6 +2951,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203154466}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b39f88197df3af4392f4a1499cd463d, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2777,6 +3038,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Lo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2899,6 +3164,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 546145039}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f0a34aa93ccc7f45b5720cdf4adf92d, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2981,7 +3250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (1)
+      value: Thul
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Thul
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2996,6 +3269,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 546145039}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 22659f79a780df14abfaefbb9c66da77, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3080,6 +3357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Io
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3093,6 +3374,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 546145039}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a960df220ab3f2342b24517dc790c481, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3177,6 +3462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Hel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3190,6 +3479,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203154466}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ade4d6f3ca963ed48bd1a619f6173f4b, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3273,6 +3566,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Cham
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3409,14 +3706,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.45490196}
+  m_Color: {r: 0.2264151, g: 0.20377359, b: 0.20377359, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dc9caae82bebda44695412ef26a7c608, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3450,6 +3747,50 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 100}
   m_Constraint: 2
   m_ConstraintCount: 5
+--- !u!1 &1355239146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355239148}
+  - component: {fileID: 1355239147}
+  m_Layer: 0
+  m_Name: RunesCountToFormSender
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1355239147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355239146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f94b0f1dc705242a2a1da8a4835c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1355239148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355239146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1434.9468, y: 530.4276, z: -1.1928287}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369423557
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,103 +3899,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369423557}
   m_CullTransparentMesh: 1
---- !u!1001 &1370900334
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 646025930}
-    m_Modifications:
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-      propertyPath: m_Name
-      value: rune_prefab
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
 --- !u!1001 &1387351017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3663,6 +3907,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369423558}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2dec03fa0ccb22046b04bf83a7e12e5e, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3746,6 +3994,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Lum
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3760,6 +4012,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 646025930}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f01096fc5034ce4d9c744d934020a7b, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3842,7 +4098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab (1)
+      value: Eld
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Eld
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3857,6 +4117,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369423558}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 37e7e48ef6b869144a2b4e79bcbc3577, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3941,6 +4205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Mal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3954,6 +4222,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369423558}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 399505c114e99264e8ca4be939aa90bc, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4038,6 +4310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Lem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4051,6 +4327,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369423558}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e551c02ef8b09d42a57afc87597aa88, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4135,6 +4415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Um
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4148,6 +4432,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203154466}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ac0d210e26dbd6540b9a8e398720bec1, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4232,6 +4520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rune_prefab (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Ohm
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4245,6 +4537,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 546145039}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a90766740dc9e944a8e9007f4c6e5ee, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4327,7 +4623,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
-      value: rune_prefab
+      value: Ort
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Ort
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4342,6 +4642,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203154466}
     m_Modifications:
+    - target: {fileID: 3884757575465268702, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 48776ae725984a3498a2388b0f593eff, type: 3}
     - target: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4425,6 +4729,10 @@ PrefabInstance:
     - target: {fileID: 4725597538581207017, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
       propertyPath: m_Name
       value: rune_prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817069352742448531, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+      propertyPath: runeName
+      value: Vex
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4589,11 +4897,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
   m_PrefabInstance: {fileID: 1305742740}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &4688645562612871009 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
-  m_PrefabInstance: {fileID: 1370900334}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4688645562890984225 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
@@ -4613,6 +4916,11 @@ RectTransform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
   m_PrefabInstance: {fileID: 1427592296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4688645563060740370 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4688645562227238524, guid: bcfba29e4d6323e4ab9d2d2a0d875946, type: 3}
+  m_PrefabInstance: {fileID: 1026625696}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &4688645563089082678 stripped
 RectTransform:
@@ -4673,3 +4981,4 @@ SceneRoots:
   - {fileID: 1323890922}
   - {fileID: 2137066845}
   - {fileID: 843402575}
+  - {fileID: 1355239148}

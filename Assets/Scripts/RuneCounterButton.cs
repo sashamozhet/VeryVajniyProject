@@ -7,6 +7,7 @@ public class RuneCounterButton : MonoBehaviour, IPointerClickHandler
     private int runeCount = 0;
     private TMP_Text runeCountTextToDisplay;
     private AudioSource audioSource;
+    public string runeName;
 
     private void Awake()
     {
